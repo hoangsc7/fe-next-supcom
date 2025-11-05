@@ -2,6 +2,45 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Scrollbar tổng thể */
+::-webkit-scrollbar {
+  width: 3px; /* độ rộng thanh cuộn */
+}
+
+/* Phần nền phía sau thanh kéo */
+::-webkit-scrollbar-track {
+  background: black; /* màu nền thanh cuộn */
+  border-radius: 8px;
+}
+
+/* Phần thanh kéo */
+::-webkit-scrollbar-thumb {
+  background: white; /* màu thanh kéo */
+  border-radius: 8px;
+}
+
+/* Khi hover vào thanh kéo */
+::-webkit-scrollbar-thumb:hover {
+  background: #808080; /* màu đậm hơn khi hover */
+}
+
+.bg-footer {
+  background: linear-gradient(to right, #993333 0%, #000066 100%);
+}
+
+/* DARK MODE */
+/*html.dark ::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}*/
+
 /* :root {
 
 --background: white;
