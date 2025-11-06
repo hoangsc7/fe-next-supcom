@@ -153,7 +153,8 @@ export default function Header() {
                       }}
                       renderValue={(value) => (
                         <Box display='flex' alignItems='center'>
-                          {value === 'vi' ? '🇻🇳' : '🇬🇧'}
+                          🇻🇳
+                          {/*{value === 'vi' ? '🇻🇳' : '🇬🇧'}*/}
                         </Box>
                       )}
                     >
@@ -162,11 +163,11 @@ export default function Header() {
                           🇻🇳 Tiếng Việt
                         </Box>
                       </MenuItem>
-                      <MenuItem value='en'>
+                      {/*<MenuItem value='en'>
                         <Box display='flex' alignItems='center' gap={1}>
                           🇬🇧 English
                         </Box>
-                      </MenuItem>
+                      </MenuItem>*/}
                     </Select>
                   </span>
                 </Box>
@@ -176,21 +177,15 @@ export default function Header() {
                       <Menu />
                     </IconButton>
                   ) : (
-                    <IconButton
-                      edge='end'
-                      color='inherit'
-                      onClick={() => {
-                        handleClear()
-                      }}
-                    >
+                    <IconButton edge='end' color='inherit' onClick={handleClear}>
                       <Close />
                     </IconButton>
                   )}
                 </div>
               </div>
             </div>
-            <Drawer anchor='top' open={open} onClose={toggleDrawer(false)}>
-              <div className='mt-16'>
+            <Drawer anchor='top' open={open} onClose={handleClear}>
+              <div className='mt-18'>
                 <List sx={{ width: '100%', textTransform: 'uppercase' }}>
                   {navItems.map((item) => (
                     <div key={item.title}>
@@ -230,7 +225,7 @@ export default function Header() {
                                           sx={{ pl: 6 }}
                                           component={Link}
                                           href={child.path}
-                                          onClick={() => handleClear()}
+                                          onClick={handleClear}
                                         >
                                           <ListItemText primary={child.title} />
                                         </ListItemButton>
@@ -368,40 +363,15 @@ export default function Header() {
                 alignItems: 'center'
               }}
             >
-              <span
-                className='border border-gray-400 rounded-md '
-                style={{ display: 'flex', alignItems: 'center', gap: '5px' }}
-              >
-                {/*<div onChange={(e) => changeLanguage(e.target.value)}>
-                  <ReactCountryFlag
-                    countryCode='VN'
-                    svg
-                    style={{
-                      width: '2em',
-                      height: '2em'
-                    }}
-                    title='Vietnam'
-                  />
-                  <ArrowDropDown />
-                </div>*/}
+              <span style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
                 <Select
                   value={locale}
                   onChange={(e) => changeLanguage(e.target.value)}
                   sx={{ color: 'black', height: '35px' }}
                 >
                   <MenuItem value='vi'>🇻🇳 Tiếng Việt</MenuItem>
-                  <MenuItem value='en'>🇬🇧 English</MenuItem>
+                  {/*<MenuItem value='en'>🇬🇧 English</MenuItem>*/}
                 </Select>
-
-                {/*<span className='text-sm'>Tiếng Việt</span>*/}
-                {/*<ul>
-                <li>
-                  <a href='#'>Tiếng Việt</a>
-                </li>
-                <li>
-                  <a href='#'>English</a>
-                </li>
-              </ul>*/}
               </span>
             </Box>
             {/* <div className=''>

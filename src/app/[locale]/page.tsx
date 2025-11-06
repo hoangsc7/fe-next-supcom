@@ -17,9 +17,7 @@ export default async function Home() {
               justifyContent: 'center',
               maxHeight: '100%'
             }}
-          >
-            Home
-          </Grid>
+          ></Grid>
         </Grid>
       </div>
     </div>

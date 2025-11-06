@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import 'react-alice-carousel/lib/alice-carousel.css'
-import { mainCarouselData } from './MainCarouselData'
+// import { mainCarouselData } from './MainCarouselData'
 import Image from 'next/image'
 import AliceCarousel from 'react-alice-carousel'
 import Link from 'next/link'
@@ -11,12 +11,13 @@ interface CarouselItem {
   image: string
   path: string
 }
+const mainCarouselData = [{ id: 1 }]
 
-const items = mainCarouselData.map((item) => (
-  <Link href={item.path} key={item.id}>
-    <Image src={item.image} width={1920} height={1080} alt='Carousel Slide' className='w-full h-full object-cover' />
-  </Link>
-))
+// const items = mainCarouselData.map((item) => (
+//   <Link href={item.path} key={item.id}>
+//     <Image src={item.image} width={1920} height={1080} alt='Carousel Slide' className='w-full h-full object-cover' />
+//   </Link>
+// ))
 
 const MainCarousel = () => (
   <div className='relative h-700px]'>
