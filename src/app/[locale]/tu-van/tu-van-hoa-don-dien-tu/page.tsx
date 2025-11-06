@@ -1,5 +1,7 @@
 import { Button, Grid } from '@mui/material'
-export default function Giayphep() {
+import Image from 'next/image'
+
+export default function EstBusinessHouseHold() {
   return (
     // <div className='bg-white dark:bg-black'>
     //   <Link href='/user'>User</Link>
@@ -16,34 +18,7 @@ export default function Giayphep() {
               maxHeight: '100%'
             }}
           >
-            <div>Dich vu thanh lap cong ty</div>
-          </Grid>
-
-          <Grid size={{ xs: 12, md: 6 }} sx={{ alignContent: 'center', padding: '16px' }}>
-            <div className='space-y-4'>
-              <span className='text-red-700 text-xl uppercase font-bold'>Về chúng tôi</span>
-              <h2 className='text-gray-900 uppercase text-3xl font-bold mt-4'>
-                CÔNG TY TNHH XÚC TIẾN ĐẦU TƯ THƯƠNG MẠI SUPCOM VIỆT NAM
-              </h2>
-              <p className='text-gray-700 text-justify'></p>
-            </div>
-
-            <Grid size={{ xs: 6, sm: 6 }} className='mt-12'>
-              <Button
-                sx={{
-                  width: '100%',
-                  height: '60px',
-                  fontSize: '18px',
-                  borderRadius: '10px'
-                }}
-                variant='contained'
-                color='success'
-                // onClick={() => handleOpen()}
-              >
-                Liên hệ
-                {/* <PhoneCallbackIcon sx={{ marginLeft: "10px" }} /> */}
-              </Button>
-            </Grid>
+            <div>Tu van ve hoa don</div>
           </Grid>
         </Grid>
       </div>

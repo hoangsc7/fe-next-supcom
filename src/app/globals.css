@@ -25,7 +25,46 @@
 }
 
 .bg-footer {
-  background: linear-gradient(to right, #993333 0%, #000066 100%);
+  /*background: linear-gradient(to right, #993333 0%, #000066 100%);*/
+  /*background: linear-gradient(135deg, #007cf0 0%, #00dfd8 50%, #7928ca 100%);*/
+  background: linear-gradient(135deg, #ff6600 0%, #007cf2 100%);
+}
+.bg-mess-icon {
+  background: linear-gradient(to top right, #4f62ff 0%, #ff6b65 100%);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-15deg);
+  }
+  75% {
+    transform: rotate(15deg);
+  }
 }
 
 /* DARK MODE */

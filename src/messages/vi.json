@@ -4,6 +4,7 @@
     "description": "Đây là phiên bản tiếng Việt."
   },
   "navbar": {
-    "about": "Về chúng tôi"
+    "about": "Về chúng tôi",
+    "home": "Trang chủ"
   }
 }

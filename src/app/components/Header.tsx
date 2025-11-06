@@ -23,20 +23,11 @@ import React, { useState } from 'react'
 import ReactCountryFlag from 'react-country-flag'
 
 // import ThemeSwitch from '~/app/components/theme/ThemeSwitch'
-import {
-  ArrowForwardIos,
-  ArrowDropDown,
-  KeyboardArrowRight,
-  Menu,
-  Close,
-  ExpandLess,
-  ExpandMore
-} from '@mui/icons-material'
-import { getTranslations } from 'next-intl/server'
+import { ArrowDropDown, KeyboardArrowRight, Menu, Close, ExpandLess, ExpandMore } from '@mui/icons-material'
 import { useLocale, useTranslations } from 'next-intl'
 import { usePathname, useRouter } from 'next/navigation'
 
-export default function NavBar() {
+export default function Header() {
   // const [openMenu, setOpenMenu] = useState<string | null>(null)
   const isMobile = useMediaQuery(useTheme().breakpoints.down('md'))
 
@@ -44,7 +35,14 @@ export default function NavBar() {
   const [openMenuLv1, setOpenMenuLv1] = useState<string | null>(null)
   const [openMenuLv2, setOpenMenuLv2] = useState<string | null>(null)
 
+  const handleClear = () => {
+    setOpen(false)
+    setOpenMenuLv1(null)
+    setOpenMenuLv2(null)
+  }
+
   const toggleDrawer = (open: boolean) => () => setOpen(open === true || false)
+
   const handleToggleMenuLv1 = (title: string) => {
     setOpenMenuLv1(openMenuLv1 === title ? null : title)
   }
@@ -71,8 +69,8 @@ export default function NavBar() {
   }
 
   const navItems = [
-    { title: 'Trang chủ', path: `/${locale}/` },
-    { title: t('about'), path: `/${locale}/gioi-thieu` },
+    { title: t('home'), path: `/${locale}/` },
+    // { title: t('about'), path: `/${locale}/gioi-thieu` },
     {
       title: 'Dịch vụ',
       path: '/',
@@ -81,8 +79,8 @@ export default function NavBar() {
           title: 'Thành lập doanh nghiệp',
           path: '/dich-vu/thanh-lap-cong-ty',
           submenu: [
-            { title: 'Việt Nam', path: '/vietnam' },
-            { title: 'Nước ngoài', path: '/nuocngoai' }
+            { title: 'Việt Nam', path: '/dich-vu/thanh-lap-cong-ty/viet-nam' },
+            { title: 'Nước ngoài', path: '/dich-vu/thanh-lap-cong-ty/nuoc-ngoai' }
           ]
         },
         { title: 'Hộ kinh doanh', path: '/dich-vu/ho-kinh-doanh' },
@@ -123,35 +121,81 @@ export default function NavBar() {
         className='!bg-white dark:!bg-gray-900 !text-black dark:!text-white dark:!shadow-gray-200 top-0'
       >
         {isMobile ? (
-          <Toolbar
-            sx={{
-              display: 'flex',
-              justifyContent: 'space-between'
-            }}
-          >
-            <Link href='/' key='logo'>
-              <div style={{ position: 'relative', width: '120px', height: '60px' }}>
-                <Image src='/logo-light.png' alt='Logo' fill sizes='120px' style={{ objectFit: 'contain' }} />
+          <Toolbar>
+            <div className='w-full flex justify-between'>
+              <Link href='/' key='logo'>
+                <div style={{ position: 'relative', width: '140px', height: '70px' }}>
+                  <Image
+                    src='/logo-light.png'
+                    priority
+                    alt='Logo'
+                    fill
+                    sizes='120px'
+                    style={{ objectFit: 'contain' }}
+                  />
+                </div>
+              </Link>
+              <div className='flex justify-items-center'>
+                <Box sx={{ display: 'flex', alignContent: 'center', marginRight: '10px' }}>
+                  <span className=' ' style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                    <Select
+                      value={locale}
+                      onChange={(e) => changeLanguage(e.target.value)}
+                      sx={{
+                        color: 'black',
+                        height: '35px',
+                        minWidth: 50,
+                        '& .MuiSelect-select': {
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '6px'
+                        }
+                      }}
+                      renderValue={(value) => (
+                        <Box display='flex' alignItems='center'>
+                          {value === 'vi' ? '🇻🇳' : '🇬🇧'}
+                        </Box>
+                      )}
+                    >
+                      <MenuItem value='vi'>
+                        <Box display='flex' alignItems='center' gap={1}>
+                          🇻🇳 Tiếng Việt
+                        </Box>
+                      </MenuItem>
+                      <MenuItem value='en'>
+                        <Box display='flex' alignItems='center' gap={1}>
+                          🇬🇧 English
+                        </Box>
+                      </MenuItem>
+                    </Select>
+                  </span>
+                </Box>
+                <div className='flex justify-center mr-1'>
+                  {!open ? (
+                    <IconButton edge='end' color='inherit' onClick={toggleDrawer(true)}>
+                      <Menu />
+                    </IconButton>
+                  ) : (
+                    <IconButton
+                      edge='end'
+                      color='inherit'
+                      onClick={() => {
+                        handleClear()
+                      }}
+                    >
+                      <Close />
+                    </IconButton>
+                  )}
+                </div>
               </div>
-            </Link>
-
-            {!open ? (
-              <IconButton edge='end' color='inherit' onClick={toggleDrawer(true)}>
-                <Menu />
-              </IconButton>
-            ) : (
-              <IconButton edge='end' color='inherit' onClick={toggleDrawer(false)}>
-                <Close />
-              </IconButton>
-            )}
-
+            </div>
             <Drawer anchor='top' open={open} onClose={toggleDrawer(false)}>
               <div className='mt-16'>
                 <List sx={{ width: '100%', textTransform: 'uppercase' }}>
                   {navItems.map((item) => (
                     <div key={item.title}>
                       <ListItemButton
-                        onClick={() => (item.submenu ? handleToggleMenuLv1(item.title) : setOpen(false))}
+                        onClick={() => (item.submenu ? handleToggleMenuLv1(item.title) : handleClear())}
                         component={!item.submenu ? Link : 'div'}
                         href={!item.submenu ? item.path : undefined}
                       >
@@ -164,11 +208,11 @@ export default function NavBar() {
                         <Collapse in={openMenuLv1 === item.title} timeout='auto' unmountOnExit>
                           <List component='div' disablePadding>
                             {item.submenu.map((sub: any) => (
-                              <>
+                              <div key={sub.title}>
                                 <ListItemButton
                                   key={sub.title}
                                   sx={{ pl: 4 }}
-                                  onClick={() => (sub.submenu ? handleToggleMenuLv2(sub.title) : setOpen(false))}
+                                  onClick={() => (sub.submenu ? handleToggleMenuLv2(sub.title) : handleClear())}
                                   component={!sub.submenu ? Link : 'div'}
                                   href={!sub.submenu ? sub.path : undefined}
                                 >
@@ -186,7 +230,7 @@ export default function NavBar() {
                                           sx={{ pl: 6 }}
                                           component={Link}
                                           href={child.path}
-                                          onClick={() => toggleDrawer(false)}
+                                          onClick={() => handleClear()}
                                         >
                                           <ListItemText primary={child.title} />
                                         </ListItemButton>
@@ -194,7 +238,7 @@ export default function NavBar() {
                                     </List>
                                   </Collapse>
                                 )}
-                              </>
+                              </div>
                             ))}
                           </List>
                         </Collapse>
@@ -209,7 +253,7 @@ export default function NavBar() {
           <Toolbar sx={{ display: 'flex', justifyContent: 'space-around' }}>
             {/*logo*/}
             <Link href='/'>
-              <Image src='/logo-light.png' alt='Logo' width={150} height={80} />
+              <Image src='/logo-light.png' alt='Logo' width={160} height={80} style={{ width: 'auto' }} priority />
             </Link>
 
             {/*item*/}

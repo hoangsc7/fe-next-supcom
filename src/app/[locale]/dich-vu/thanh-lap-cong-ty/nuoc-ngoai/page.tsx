@@ -1,13 +1,14 @@
 import { Button, Grid } from '@mui/material'
-import MainCarousel from '../components/carousel/MainCarousel'
-import { getTranslations } from 'next-intl/server'
+import { Metadata } from 'next'
+import Image from 'next/image'
 
-export default async function Home() {
-  const t = await getTranslations('home')
+export const metadata: Metadata = {
+  title: 'Thành lập doanh nghiệp có vốn đầu tư nước ngoài'
+}
 
+export default function EstCompanyWorld() {
   return (
     <div className=''>
-      <div className='w-full h-full  overflow-hidden bg-footer'>{/*<MainCarousel />*/}</div>
       <div className='flex justify-center pt-[20px] pb-[20px] h-auto'>
         <Grid container sx={{ width: '90%' }}>
           <Grid
@@ -18,7 +19,7 @@ export default async function Home() {
               maxHeight: '100%'
             }}
           >
-            Home
+            <div>Thành lập doanh nghiệp có vốn đầu tư nước ngoài</div>
           </Grid>
         </Grid>
       </div>

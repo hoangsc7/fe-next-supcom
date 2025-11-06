@@ -24,8 +24,8 @@ const MainCarousel = () => (
       items={items}
       infinite
       autoPlay
-      autoPlayInterval={5000}
       mouseTracking
+      autoPlayInterval={5000}
       disableButtonsControls={true}
       animationDuration={1000}
       disableDotsControls={true}

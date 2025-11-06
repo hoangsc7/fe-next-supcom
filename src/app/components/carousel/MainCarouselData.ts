@@ -1,12 +1,12 @@
 export const mainCarouselData = [
   {
     id: 1,
-    image: '/logo-light.png',
+    image: '/logo-dark.png',
     path: ''
   },
   {
     id: 2,
-    image: '/logo-light.png',
+    image: '/logo-dark.png',
     path: ''
   }
 ]

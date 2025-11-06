@@ -12,6 +12,7 @@ const Footer = () => {
           <Image
             className='max-w-[400px] max-h-[200px] pt-2'
             src='/logo-dark.png'
+            priority
             alt='Logo'
             width={0}
             height={0}
@@ -30,7 +31,7 @@ const Footer = () => {
               <Apartment className='mb-2' />
               <span className='text-xl pl-2'>Trụ sở Hà Nội:</span>
               <br />
-              <span className='text-gray-400'>
+              <span className='text-gray-300'>
                 Tầng 7 Toà nhà Viglacera 676 Hoàng Hoa Thám, Phường Tây Hồ, TP Hà Nội
               </span>
             </li>
@@ -48,7 +49,7 @@ const Footer = () => {
               <span className='text-xl pl-2'>Chi nhánh miền Trung:</span>
               <br />
               <div>
-                <span className='text-gray-400'>Số 17 đường An Dương Vương, TP Vinh, Tỉnh Nghệ An</span>
+                <span className='text-gray-300'>Số 17 đường An Dương Vương, TP Vinh, Tỉnh Nghệ An</span>
               </div>
             </li>
             <li>
@@ -62,9 +63,9 @@ const Footer = () => {
             <hr />
             <li>
               <ReceiptLong />
-              <span className='pl-2 text-gray-400'>MST: 0110596554 </span>
+              <span className='pl-2 text-gray-300'>MST: 0110596554 </span>
               <br />
-              <span className='pl-8 text-gray-400'>Người đại diện: Tăng Thị Thúy </span>
+              <span className='pl-8 text-gray-300'>Người đại diện: Tăng Thị Thúy </span>
             </li>
             {/*<li>
               <DateRange />
@@ -84,7 +85,7 @@ const Footer = () => {
         <Grid size={{ xs: 12, lg: 4.5 }} className='text-white'>
           <Grid container spacing={4}>
             <Grid size={{ xs: 12, lg: 6 }}>
-              <hr />
+              {/*<hr />
               <div className='mb-6'>
                 <span className='text-xl'>Về chúng tôi</span>
                 <ul className=' pt-2 pl-4 space-y-1 list-disc'>
@@ -100,15 +101,14 @@ const Footer = () => {
                     <span className='text-gray-300'>Giấy phép DKKD và Chứng chỉ</span>
                   </li>
                 </ul>
-              </div>
-              <hr />
-              <div>
+              </div>*/}
+              <hr className='mb-2' />
+              <div className='mb-6'>
                 <span className='text-xl'>Dịch vụ</span>
                 <ul className=' pt-2 pl-4 space-y-1 list-disc'>
                   <li>
                     <span className='text-gray-300'>Thành lập doanh nghiệp trọn gói</span>
                   </li>
-
                   <li>
                     <span className='text-gray-300'>Thay đổi giấy phép kinh doanh</span>
                   </li>
@@ -120,10 +120,8 @@ const Footer = () => {
                   </li>
                 </ul>
               </div>
-            </Grid>
-            <Grid size={{ xs: 12, lg: 6 }}>
-              <hr />
-              <div className='mb-6'>
+              <hr className='mb-2' />
+              <div>
                 <span className='text-xl'>Sản phẩm</span>
                 <ul className=' pt-2 pl-4 space-y-1 list-disc'>
                   <li>
@@ -137,7 +135,9 @@ const Footer = () => {
                   </li>
                 </ul>
               </div>
-              <hr />
+            </Grid>
+            <Grid size={{ xs: 12, lg: 6 }}>
+              <hr className='mb-2' />
               <div>
                 <span className='text-xl'>Tư vấn</span>
                 <ul className=' pt-2 pl-4 space-y-1 list-disc'>
@@ -163,7 +163,7 @@ const Footer = () => {
         <Grid size={{ xs: 12, lg: 3 }} className='text-white'>
           <h3 className='flex justify-center text-2xl font-bold mb-2'>Theo dõi chúng tôi</h3>
           <div className='flex justify-center space-x-4  '>
-            <a href='https://www.facebook.com/p/An-Pha%CC%81t-Qu%C3%B4%CC%81c-T%C3%AA%CC%81-A%CC%81-Ch%C3%A2u-61575039501435/'>
+            <a href='/'>
               <Image
                 className='max-w-[60px] max-h-[60px]'
                 src='/next.svg'
@@ -172,17 +172,6 @@ const Footer = () => {
                 height={0}
                 sizes='100vw'
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-              />
-            </a>
-            <a href='https://zalo.me/0973762618'>
-              <Image
-                className='max-w-[65px] max-h-[65px]'
-                src='/next.svg'
-                alt=''
-                width={0}
-                height={0}
-                sizes='100vw'
-                style={{ width: '100%', height: '100%', objectFit: 'cover', border: '1px ' }}
               />
             </a>
           </div>

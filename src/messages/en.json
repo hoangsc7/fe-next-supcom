@@ -4,6 +4,7 @@
     "description": "This is the English version."
   },
   "navbar": {
-    "about": "About us"
+    "about": "About us",
+    "home": "home"
   }
 }
