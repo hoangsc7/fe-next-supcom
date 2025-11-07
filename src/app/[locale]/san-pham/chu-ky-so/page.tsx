@@ -1,5 +1,4 @@
-import { Button, Grid } from '@mui/material'
-import Image from 'next/image'
+import { Grid } from '@mui/material'
 
 export default function EstCompany() {
   return (

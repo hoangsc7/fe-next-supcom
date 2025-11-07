@@ -37,7 +37,7 @@ export default async function RootLayout({
   params: Promise<{ locale: string }>
 }) {
   const { locale } = await params
-  if (!locales.includes(locale as any)) notFound()
+  // if (!locales.includes(locale as string)) notFound()
 
   const messages = { en, vi }[locale as 'en' | 'vi']
 

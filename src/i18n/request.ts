@@ -10,7 +10,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
   // console.log('📦 Locale hiện tại:', locale)
 
   // Fallback if locale is undefined
-  if (!locale || !routing.locales.includes(locale as any)) {
+  if (!locale || !routing.locales.includes(locale as (typeof routing.locales)[number])) {
     locale = routing.defaultLocale
   }
 

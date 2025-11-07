@@ -1,5 +1,5 @@
 // app/layout.tsx
-import { Metadata } from 'next'
+// import { Metadata } from 'next'
 import './globals.css'
 import { ReactNode } from 'react'
 
