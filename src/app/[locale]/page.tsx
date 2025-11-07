@@ -1,5 +1,5 @@
-import { Button, Grid } from '@mui/material'
-import MainCarousel from '../components/carousel/MainCarousel'
+import { Grid } from '@mui/material'
+// import MainCarousel from '../components/carousel/MainCarousel'
 import { getTranslations } from 'next-intl/server'
 
 export default async function Home() {

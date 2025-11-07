@@ -57,7 +57,7 @@ export default function Header() {
   // locale
   const locale = useLocale()
 
-  const t: any = useTranslations('navbar')
+  const t = useTranslations('navbar')
   const router = useRouter()
   const pathname = usePathname()
 
@@ -202,7 +202,7 @@ export default function Header() {
                       {item.submenu && (
                         <Collapse in={openMenuLv1 === item.title} timeout='auto' unmountOnExit>
                           <List component='div' disablePadding>
-                            {item.submenu.map((sub: any) => (
+                            {item.submenu.map((sub) => (
                               <div key={sub.title}>
                                 <ListItemButton
                                   key={sub.title}
@@ -219,7 +219,7 @@ export default function Header() {
                                 {sub.submenu && (
                                   <Collapse in={openMenuLv2 === sub.title} timeout='auto' unmountOnExit>
                                     <List component='div' disablePadding>
-                                      {sub.submenu.map((child: any) => (
+                                      {sub.submenu.map((child) => (
                                         <ListItemButton
                                           key={child.title}
                                           sx={{ pl: 6 }}

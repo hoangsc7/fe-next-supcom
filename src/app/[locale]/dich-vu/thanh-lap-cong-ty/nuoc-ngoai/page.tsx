@@ -1,6 +1,5 @@
-import { Button, Grid } from '@mui/material'
+import { Grid } from '@mui/material'
 import { Metadata } from 'next'
-import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Thành lập doanh nghiệp có vốn đầu tư nước ngoài'

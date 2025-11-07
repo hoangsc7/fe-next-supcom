@@ -163,7 +163,7 @@ const Footer = () => {
         <Grid size={{ xs: 12, lg: 3 }} className='text-white'>
           <h3 className='flex justify-center text-2xl font-bold mb-2'>Theo dõi chúng tôi</h3>
           <div className='flex justify-center space-x-4  '>
-            <a href='/'>
+            <Link href='/'>
               <Image
                 className='max-w-[60px] max-h-[60px]'
                 src='/next.svg'
@@ -173,7 +173,7 @@ const Footer = () => {
                 sizes='100vw'
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
-            </a>
+            </Link>
           </div>
           {/* <div className="flex justify-center mt-4">
             <img
