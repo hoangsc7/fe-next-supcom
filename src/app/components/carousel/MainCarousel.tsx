@@ -5,7 +5,6 @@ import 'react-alice-carousel/lib/alice-carousel.css'
 
 import AliceCarousel from 'react-alice-carousel'
 
-
 // interface CarouselItem {
 //   id: string
 //   image: string
@@ -20,18 +19,18 @@ import AliceCarousel from 'react-alice-carousel'
 // ))
 
 const MainCarousel = () => (
-  // <div className='relative h-700px]'>
-  //   <AliceCarousel
-  //     items={items}
-  //     infinite
-  //     autoPlay
-  //     mouseTracking
-  //     autoPlayInterval={5000}
-  //     disableButtonsControls={true}
-  //     animationDuration={1000}
-  //     disableDotsControls={true}
-  //   />
-  // </div>
+  <div className='relative h-700px]'>
+    {/*<AliceCarousel
+      items={items}
+      infinite
+      autoPlay
+      mouseTracking
+      autoPlayInterval={5000}
+      disableButtonsControls={true}
+      animationDuration={1000}
+      disableDotsControls={true}
+    />*/}
+  </div>
 )
 
 export default MainCarousel
