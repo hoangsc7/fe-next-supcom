@@ -248,7 +248,14 @@ export default function Header() {
           <Toolbar sx={{ display: 'flex', justifyContent: 'space-around' }}>
             {/*logo*/}
             <Link href='/'>
-              <Image src='/logo-light.png' alt='Logo' width={160} height={80} style={{ width: 'auto' }} priority />
+              <Image
+                src='/logo-light.png'
+                alt='Logo'
+                width={160}
+                height={80}
+                style={{ width: 'auto', margin: '4px 0' }}
+                priority
+              />
             </Link>
 
             {/*item*/}

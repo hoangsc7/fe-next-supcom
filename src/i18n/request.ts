@@ -2,7 +2,7 @@
 import { getRequestConfig } from 'next-intl/server'
 import { routing } from './routing'
 
-export const locales = ['en', 'vi'] as const
+export const locales = ['vi', 'en'] as const
 export const defaultLocale = 'vi'
 
 export default getRequestConfig(async ({ requestLocale }) => {

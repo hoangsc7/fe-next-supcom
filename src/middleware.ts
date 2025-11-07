@@ -19,7 +19,8 @@ console.log('🧩 middleware.ts LOADED')
 const middleware = createMiddleware({
   locales,
   defaultLocale,
-  localePrefix: 'always'
+  localePrefix: 'always',
+  localeDetection: false
 })
 
 export default function (req: any) {

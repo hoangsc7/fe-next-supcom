@@ -7,7 +7,14 @@ const nextConfig: NextConfig = {
   /* config options here */
 
   images: {
-    domains: ['supcom.vn', 'www.anphatlaichau.com']
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'supcom.vn',
+        port: '',
+        pathname: '/**'
+      }
+    ]
   }
 }
 

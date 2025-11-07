@@ -33,6 +33,10 @@
   background: linear-gradient(to top right, #4f62ff 0%, #ff6b65 100%);
 }
 
+li {
+  cursor: pointer;
+}
+
 @keyframes float {
   0%,
   100% {
