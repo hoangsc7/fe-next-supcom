@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 const Footer = () => {
   return (
-    <div className='bg-footer h-auto'>
+    <div className='bg-footer h-auto w-full'>
       <div className=''>
         <div className='flex justify-center'>
           <Image
@@ -32,7 +32,7 @@ const Footer = () => {
               <span className='text-xl pl-2'>Trụ sở Hà Nội:</span>
               <br />
               <span className='text-gray-300'>
-                Tầng 7 Toà nhà Viglacera 676 Hoàng Hoa Thám, Phường Tây Hồ, TP Hà Nội
+                Tầng 7 Toà nhà Viglacera 676 Hoàng Hoa Thám, Phường Tây Hồ, TP.Hà Nội
               </span>
             </li>
             <li>
@@ -44,7 +44,7 @@ const Footer = () => {
               <span className=' pl-2'>Email: supcom.head@gmail.com</span>
             </li>
             <hr />
-            <li className='mt-6'>
+            {/*<li className='mt-6'>
               <Apartment className='mb-2' />
               <span className='text-xl pl-2'>Chi nhánh miền Trung:</span>
               <br />
@@ -60,22 +60,14 @@ const Footer = () => {
               <Mail />
               <span className=' pl-2'>Email: supcom.mientrung@gmail.com</span>
             </li>
-            <hr />
+            <hr />*/}
             <li>
               <ReceiptLong />
               <span className='pl-2 text-gray-300'>MST: 0110596554 </span>
               <br />
               <span className='pl-8 text-gray-300'>Người đại diện: Tăng Thị Thúy </span>
             </li>
-            {/*<li>
-              <DateRange />
-              <span className='pl-2'>Ngày cấp: 10-01-2024</span>
-            </li>*/}
 
-            {/*<li>
-              <Language />
-              <span className='pl-2'>Website: supcom.vn</span>
-            </li>*/}
             <li>
               <PendingActions />
               <span className='pl-2'>Thời gian làm việc: Từ thứ 2 đến thứ 7</span>
@@ -83,25 +75,9 @@ const Footer = () => {
           </ul>
         </Grid>
         <Grid size={{ xs: 12, lg: 4.5 }} className='text-white'>
-          <Grid container spacing={4}>
+          {/*<Grid container spacing={4}>
             <Grid size={{ xs: 12, lg: 6 }}>
-              {/*<hr />
-              <div className='mb-6'>
-                <span className='text-xl'>Về chúng tôi</span>
-                <ul className=' pt-2 pl-4 space-y-1 list-disc'>
-                  <li>
-                    <Link href='/gioi-thieu' className='text-gray-300'>
-                      Giới thiệu
-                    </Link>
-                  </li>
-                  <li>
-                    <span className='text-gray-300'>Tuyển dụng</span>
-                  </li>
-                  <li>
-                    <span className='text-gray-300'>Giấy phép DKKD và Chứng chỉ</span>
-                  </li>
-                </ul>
-              </div>*/}
+              
               <hr className='mb-2' />
               <div className='mb-6'>
                 <span className='text-xl'>Dịch vụ</span>
@@ -157,7 +133,45 @@ const Footer = () => {
                 </ul>
               </div>
             </Grid>
-          </Grid>
+          </Grid>*/}
+          <ul className='space-y-2'>
+            <li className=''>
+              <Apartment className='mb-2' />
+              <span className='text-xl pl-2'>Chi nhánh miền Trung:</span>
+              <br />
+              <div>
+                <span className='text-gray-300'>Số 17 đường An Dương Vương, TP.Vinh, Tỉnh Nghệ An</span>
+              </div>
+            </li>
+            <li>
+              <LocalPhone />
+              <span className=' pl-2 '>Hotline: 0938.171.186</span>
+            </li>
+            <li>
+              <Mail />
+              <span className=' pl-2'>Email: supcom.mientrung@gmail.com</span>
+            </li>
+            <hr />
+            <li>
+              <ReceiptLong />
+              <span className='pl-2 text-gray-300'>MST: 0110596554- </span>
+              <br />
+              <span className='pl-8 text-gray-300'>Người đại diện: Tăng Thị Thúy </span>
+            </li>
+            {/*<li>
+              <DateRange />
+              <span className='pl-2'>Ngày cấp: 10-01-2024</span>
+            </li>*/}
+
+            {/*<li>
+              <Language />
+              <span className='pl-2'>Website: supcom.vn</span>
+            </li>*/}
+            <li>
+              <PendingActions />
+              <span className='pl-2'>Thời gian làm việc: Từ thứ 2 đến thứ 7</span>
+            </li>
+          </ul>
         </Grid>
 
         <Grid size={{ xs: 12, lg: 3 }} className='text-white'>
@@ -183,9 +197,9 @@ const Footer = () => {
           </div> */}
         </Grid>
       </Grid>
-      <div className='text-white text-center italic'>
+      <div className='text-white text-center italic mb-2'>
         <hr className='border-t-1 border-gray-300' style={{ borderStyle: 'dashed' }} />
-        <span className=' text-gray-400'>@Copyright 2025 Designed by Supcom VN & HSC1. All rights reserved.</span>
+        <span className=' text-gray-400'>@Copyright 2025 Designed by Supcom VN & HSC1</span>
       </div>
     </div>
   )

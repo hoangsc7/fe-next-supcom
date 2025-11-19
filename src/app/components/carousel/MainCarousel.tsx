@@ -1,36 +1,36 @@
 'use client'
+
+import { mainCarouselData } from './MainCarouselData'
+
+import Image from 'next/image'
+import Link from 'next/link'
+
 import React from 'react'
-import 'react-alice-carousel/lib/alice-carousel.css'
-// import { mainCarouselData } from './MainCarouselData'
+import useEmblaCarousel from 'embla-carousel-react'
+import Autoplay from 'embla-carousel-autoplay'
 
-import AliceCarousel from 'react-alice-carousel'
+export function EmblaCarousel() {
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 5000, stopOnInteraction: false })])
 
-// interface CarouselItem {
-//   id: string
-//   image: string
-//   path: string
-// }
-// const mainCarouselData = [{ id: 1 }]
-
-// const items = mainCarouselData.map((item) => (
-//   <Link href={item.path} key={item.id}>
-//     <Image src={item.image} width={1920} height={1080} alt='Carousel Slide' className='w-full h-full object-cover' />
-//   </Link>
-// ))
-
-const MainCarousel = () => (
-  <div className='relative h-700px]'>
-    {/*<AliceCarousel
-      items={items}
-      infinite
-      autoPlay
-      mouseTracking
-      autoPlayInterval={5000}
-      disableButtonsControls={true}
-      animationDuration={1000}
-      disableDotsControls={true}
-    />*/}
-  </div>
-)
-
-export default MainCarousel
+  return (
+    <div className='embla' ref={emblaRef}>
+      <div className='embla__container'>
+        {mainCarouselData.map((item) => (
+          <div className='embla__slide' key={item?.id}>
+            <Link href={item?.path}>
+              <div className='relative w-full aspect-[18/8.95] h-auto md:aspect-[18/8.95] object-cover'>
+                <Image
+                  src={item?.image}
+                  fill
+                  quality={100}
+                  alt={`Carousel Slide ${item?.id}`}
+                  priority={item?.id === mainCarouselData[0]?.id}
+                />
+              </div>
+            </Link>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
