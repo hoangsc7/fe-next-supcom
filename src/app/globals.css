@@ -23,6 +23,13 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #808080; /* màu đậm hơn khi hover */
 }
+.bg-root {
+  background-image: url('../../public/bg_trong_dong.jpg');
+  background-size: cover; /* hoặc 'contain' tùy ý */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 
 .bg-footer {
   /*background: linear-gradient(to right, #993333 0%, #000066 100%);*/
@@ -31,6 +38,25 @@
 }
 .bg-mess-icon {
   background: linear-gradient(to top right, #4f62ff 0%, #ff6b65 100%);
+}
+
+.bg-text-line {
+  background: linear-gradient(to right, #13dfd0 0%, white 100%);
+}
+
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 li {
@@ -70,6 +96,22 @@ li {
     transform: rotate(15deg);
   }
 }
+
+/*.wave-line {
+  border: none;
+  height: 6px;
+  background: repeating-linear-gradient(-45deg, #888, #888 10px, transparent 10px, transparent 20px);
+  animation: waveMove 2s linear infinite;
+}
+
+@keyframes waveMove {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: 20px;
+  }
+}*/
 
 /* DARK MODE */
 /*html.dark ::-webkit-scrollbar-track {
