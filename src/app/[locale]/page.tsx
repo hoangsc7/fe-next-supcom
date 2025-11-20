@@ -4,25 +4,32 @@ import { New } from '~/types/new'
 import FormNews from '../components/News/FormNews'
 import { EmblaCarousel } from '../components/carousel/MainCarousel'
 import { NewsData } from '../components/News/NewsData'
-import Image from 'next/image'
 import Link from 'next/link'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Trang chủ'
+}
 
 export default async function Home() {
-  const data: New[] = NewsData
+  // const data: New[] =  NewsData
 
   const t = await getTranslations('home')
 
-  const groupedByCategory = data.reduce((acc: Record<string, { category: New['category']; newsList: New[] }>, cur) => {
-    const categoryId = cur.category.id
-    if (!acc[categoryId]) {
-      acc[categoryId] = {
-        category: cur.category,
-        newsList: []
+  const groupedByCategory = NewsData.reduce(
+    (acc: Record<string, { category: New['category']; newsList: New[] }>, cur) => {
+      const categoryId = cur.category.id
+      if (!acc[categoryId]) {
+        acc[categoryId] = {
+          category: cur.category,
+          newsList: []
+        }
       }
-    }
-    acc[categoryId].newsList.push(cur)
-    return acc
-  }, {})
+      acc[categoryId].newsList.push(cur)
+      return acc
+    },
+    {}
+  )
 
   return (
     <>
@@ -53,8 +60,8 @@ export default async function Home() {
               >
                 {Object.entries(groupedByCategory).map(([categoryId, { category, newsList }]) => (
                   <Grid key={categoryId} className='mb-10'>
-                    <h1 className='text-[20px] md:text-[25px] uppercase p-1'>{category?.name}</h1>
-                    <hr className=' w-full h-[1px] md:h-[2px] bg-footer border-0 mb-8' />
+                    <h1 className='text-[20px] md:text-[25px] uppercase p-1'>{category?.title}</h1>
+                    <hr className=' w-full h-px md:h-0.5 bg-footer border-0 mb-8' />
                     <FormNews category={category} newsList={newsList} />
                     <div className='flex justify-center mt-5'>
                       <Link href={`/${category?.slug}`}>
@@ -64,7 +71,8 @@ export default async function Home() {
                             background: '#0091e0',
                             color: 'white',
                             padding: '5px 15px',
-                            borderRadius: '4px'
+                            borderRadius: '4px',
+                            hover: ''
                           }}
                         >
                           <span className='font-sans'>Xem thêm</span>
