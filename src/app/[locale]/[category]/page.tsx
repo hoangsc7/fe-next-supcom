@@ -3,7 +3,7 @@ import { Breadcrumbs, Typography } from '@mui/material'
 import Link from 'next/link'
 import { NewsData } from '~/app/components/News/NewsData'
 import FormNews from '~/app/components/News/FormNews'
-import { Category } from '~/types/new'
+// import { Category } from '~/types/new'
 import { notFound } from 'next/navigation'
 // import OutStandNews from '~/app/components/News/OutStandNews'
 
@@ -35,14 +35,14 @@ const PageCategory = async ({
       <hr />
 
       {/*Breadcrumbs*/}
-      <div className='flex justify-center pt-[8px] pb-[8px] h-auto '>
+      <div className='flex justify-center pt-2 pb-2 h-auto '>
         <Breadcrumbs sx={{ width: '100%' }} aria-label='breadcrumb' separator={<NavigateNext fontSize='small' />}>
           <Link color='inherit' href={`/${resolvedParams.locale}/`}>
             <Home sx={{ margin: '0px 3px 3px 3px' }} fontSize='inherit' />
             Trang chủ
           </Link>
 
-          <Typography sx={{}}>{listByCategory[0].category.name}</Typography>
+          <Typography sx={{}}>{listByCategory[0].category.title}</Typography>
         </Breadcrumbs>
       </div>
       <hr />

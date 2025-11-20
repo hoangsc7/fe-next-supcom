@@ -20,12 +20,22 @@ const geistMono = Geist_Mono({
   subsets: ['latin']
 })
 
-export const metadata: Metadata = {
-  title: {
-    default: 'Supcom Việt Nam',
-    template: '%s - Supcom Việt Nam'
-  },
-  description: 'Công ty chuyên về các dịch vụ doanh nghiệp'
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+
+  return {
+    description: 'Dịch vụ thành lập công ty, chữ ký số, bảo hiểm xã hội,...',
+    alternates: {
+      canonical: `https://supcom.vn/${locale}`,
+      languages: {
+        vi: '/vi',
+        en: '/en'
+      }
+    },
+    openGraph: {
+      locale: locale
+    }
+  }
 }
 
 export default async function RootLayoutLocale({

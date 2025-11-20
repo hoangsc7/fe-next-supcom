@@ -9,7 +9,6 @@ type Prop = {
 }
 
 const CardNews = ({ data }: Prop) => {
-  // console.log('data:', data)
   return (
     <div className='h-full flex flex-col'>
       <Link
@@ -22,11 +21,11 @@ const CardNews = ({ data }: Prop) => {
             alt={data?.title || 'No Title'}
             width={400}
             height={300}
-            className='w-full h-auto flex-shrink-0 object-cover'
+            className='w-full h-auto shrink-0 object-cover'
             priority
           />
         </div>
-        <p className='text-[14px] text-justify md:text-[16px] p-3 text-gray-700 flex-grow mb-2'>{data?.title}</p>
+        <p className='text-[14px] text-justify md:text-[16px] p-3 text-gray-700 grow mb-2'>{data?.title}</p>
       </Link>
     </div>
   )

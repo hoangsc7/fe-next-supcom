@@ -1,8 +1,14 @@
 export interface Category {
   id: number
-  name: string
+  title: string
   slug: string
+  locale?: Locale
 }
+export interface Locale {
+    id: number;
+    key: string;
+    name: string;
+  }
 
 export interface New {
   id: number
