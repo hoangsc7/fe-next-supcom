@@ -15,43 +15,28 @@ const PageCategory = async ({
   searchParams: Promise<{ page?: string }>
 }) => {
   const resolvedParams = await params
-  // const param = await searchParams
-  // const pages = Number(param.page) || 1
-  // const pageSize = 11
-  // const params = await searchParams
-  // console.log('category:', resolvedParams)
+
   const listByCategory = NewsData.filter((item) => item.category.slug === resolvedParams.category)
   if (listByCategory.length === 0) {
     return notFound()
   }
-  // console.log('list:', listByCategory)
-
-  // console.log('param:', JSON.stringify(params))
-  // const page = Number(params.page) || 1
-  // const pageSize = 11
   return (
-    <div className='w-full max-w-[1170px] bg-white p-1 md:p-5'>
-      {/*<div className='text-2xl uppercase'>Thành lập công ty</div>*/}
-      <hr />
-
-      {/*Breadcrumbs*/}
-      <div className='flex justify-center pt-2 pb-2 h-auto '>
-        <Breadcrumbs sx={{ width: '100%' }} aria-label='breadcrumb' separator={<NavigateNext fontSize='small' />}>
-          <Link color='inherit' href={`/${resolvedParams.locale}/`}>
-            <Home sx={{ margin: '0px 3px 3px 3px' }} fontSize='inherit' />
-            Trang chủ
-          </Link>
-
-          <Typography sx={{}}>{listByCategory[0].category.title}</Typography>
-        </Breadcrumbs>
-      </div>
-      <hr />
-      {/**/}
-      {/*<div>Dich vu thanh lap cong ty gia chi tu ...</div>*/}
-      {/**/}
-      {/*<OutStandNews />*/}
-      <div className='mt-1'>
-        <FormNews category={listByCategory[0].category} newsList={listByCategory} />
+    <div className='flex justify-center'>
+      <div className='w-full max-w-[1170px] bg-white p-1 md:p-4'>
+        <hr />
+        <div className='flex justify-center pt-2 pb-2 h-auto '>
+          <Breadcrumbs sx={{ width: '100%' }} aria-label='breadcrumb' separator={<NavigateNext fontSize='small' />}>
+            <Link color='inherit' href={`/${resolvedParams.locale}/`}>
+              <Home sx={{ margin: '0px 3px 3px 3px' }} fontSize='inherit' />
+              Trang chủ
+            </Link>
+            <Typography sx={{}}>{listByCategory[0].category.title}</Typography>
+          </Breadcrumbs>
+        </div>
+        <hr />
+        <div className='mt-1'>
+          <FormNews category={listByCategory[0].category} newsList={listByCategory} />
+        </div>
       </div>
     </div>
   )

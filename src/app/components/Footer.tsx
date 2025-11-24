@@ -1,6 +1,6 @@
 import { Grid } from '@mui/material'
 import React from 'react'
-import { LocalPhone, Language, PendingActions, Apartment, ReceiptLong, Mail } from '@mui/icons-material'
+import { LocalPhone, Apartment, Mail } from '@mui/icons-material'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -170,7 +170,7 @@ const Footer = () => {
           </div> */}
         </Grid>
       </Grid>
-      <div className='text-white text-center italic mb-2'>
+      <div className='text-white text-center italic'>
         <hr className='border-t border-gray-300' style={{ borderStyle: 'dashed' }} />
         <span className=' text-gray-400'>@Copyright 2025 Designed by Supcom VN & HSC1</span>
       </div>

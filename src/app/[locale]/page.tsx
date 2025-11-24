@@ -6,6 +6,7 @@ import { EmblaCarousel } from '../components/carousel/MainCarousel'
 import { NewsData } from '../components/News/NewsData'
 import Link from 'next/link'
 import { Metadata } from 'next'
+import Banner from '../components/Home/Banner'
 
 export const metadata: Metadata = {
   title: 'Trang chủ'
@@ -33,56 +34,57 @@ export default async function Home() {
 
   return (
     <>
-      <div className='w-full flex justify-center'>
-        <div className=' w-full max-w-[1150px] bg-white '>
-          <div className='h-auto'>
-            <EmblaCarousel />
-          </div>
+      <div className='w-full'>
+        <Banner />
 
-          {/*About*/}
-          <div className=' p-3 md:p-6  '>
-            <div className='font-bold text-2xl uppercase text-shadow text-purple-900 '>
-              <h1>Công ty tnhh xúc tiến đầu tư thương mại Supcom Việt Nam</h1>
+        <div className='h-auto'>{/* <EmblaCarousel /> */}</div>
+        <div className=' w-full bg-white flex justify-center '>
+          {/* Body */}
+          <div className='max-w-[1170px]'>
+            <div className=' p-3 md:p-6  '>
+              <div className='font-bold text-2xl uppercase text-shadow text-purple-900 '>
+                <h1>Công ty tnhh xúc tiến đầu tư thương mại Supcom Việt Nam</h1>
+              </div>
+              <span className='text-xl md:text-3xl text-shadow'>
+                Tư vấn pháp lý, thành lập công ty, hộ kinh doanh
+                <br /> Dịch vụ chữ ký số, hóa đơn điện tử, bảo hiểm xã hội,...
+              </span>
             </div>
-            <span className='text-xl md:text-3xl text-shadow'>
-              Tư vấn pháp lý, thành lập công ty, hộ kinh doanh
-              <br /> Dịch vụ chữ ký số, hóa đơn điện tử, bảo hiểm xã hội,...
-            </span>
-          </div>
-          <div className=' p-3 md:p-6 '>
-            <Grid container>
-              <Grid
-                sx={{
-                  width: '100%',
-                  height: '100%',
-                  maxHeight: '100%'
-                }}
-              >
-                {Object.entries(groupedByCategory).map(([categoryId, { category, newsList }]) => (
-                  <Grid key={categoryId} className='mb-10'>
-                    <h1 className='text-[20px] md:text-[25px] uppercase p-1'>{category?.title}</h1>
-                    <hr className=' w-full h-px md:h-0.5 bg-footer border-0 mb-8' />
-                    <FormNews category={category} newsList={newsList} />
-                    <div className='flex justify-center mt-5'>
-                      <Link href={`/${category?.slug}`}>
-                        <Button
-                          sx={{
-                            border: '1px solid #0091e0',
-                            background: '#0091e0',
-                            color: 'white',
-                            padding: '5px 15px',
-                            borderRadius: '4px',
-                            hover: ''
-                          }}
-                        >
-                          <span className='font-sans'>Xem thêm</span>
-                        </Button>
-                      </Link>
-                    </div>
-                  </Grid>
-                ))}
+            <div className=' p-3 md:p-6 '>
+              <Grid container>
+                <Grid
+                  sx={{
+                    width: '100%',
+                    height: '100%',
+                    maxHeight: '100%'
+                  }}
+                >
+                  {Object.entries(groupedByCategory).map(([categoryId, { category, newsList }]) => (
+                    <Grid key={categoryId} className='mb-10'>
+                      <h1 className='text-[20px] md:text-[25px] uppercase p-1'>{category?.title}</h1>
+                      <hr className=' w-full h-px md:h-0.5 bg-footer border-0 mb-8' />
+                      <FormNews category={category} newsList={newsList} />
+                      <div className='flex justify-center mt-5'>
+                        <Link href={`/${category?.slug}`}>
+                          <Button
+                            sx={{
+                              border: '1px solid #0091e0',
+                              background: '#0091e0',
+                              color: 'white',
+                              padding: '5px 15px',
+                              borderRadius: '4px',
+                              hover: ''
+                            }}
+                          >
+                            <span className='font-sans'>Xem thêm</span>
+                          </Button>
+                        </Link>
+                      </div>
+                    </Grid>
+                  ))}
+                </Grid>
               </Grid>
-            </Grid>
+            </div>
           </div>
         </div>
       </div>

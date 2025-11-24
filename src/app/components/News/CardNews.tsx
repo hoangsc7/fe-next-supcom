@@ -13,7 +13,7 @@ const CardNews = ({ data }: Prop) => {
     <div className='h-full flex flex-col'>
       <Link
         href={`/${data?.category.slug}/${data?.slug}`}
-        className=' flex flex-col h-full rounded-sm overflow-hidden hover:shadow-lg transition-shadow shadow-[0_0_15px_rgba(0,0,0,0.2)]'
+        className=' flex flex-col h-full rounded-sm overflow-hidden shadow-xl transition-shadow hover:shadow-[0_0_15px_rgba(0,0,0,0.3)]'
       >
         <div className='p-1'>
           <Image

@@ -1,7 +1,7 @@
 export const NewsData = [
   {
     id: 1,
-    image: '/bg-test.png',
+    image: '/banner/banner-3.jpg',
     title: 'Dịch vụ hỗ trợ thiết lập mối quan hệ giữa nhà đầu tư nước ngoài và cơ quan nhà nước Việt Nam',
     slug: 'supcom-vietnam-1',
     category: {
@@ -148,21 +148,28 @@ export const NewsData = [
   },
   {
     id: 17,
-    image: '/bg-test.png',
+    image: '/img/bhxh.jpg',
     title: 'Dịch vụ lập báo cáo nghiên cứu khả thi cho dự án đầu tư tại Việt Nam',
     slug: 'supcom-vietnam-2',
     category: { id: 5, title: 'Phần mềm', slug: 'phan-mem' }
   },
   {
     id: 18,
-    image: '/bg-test.png',
+    image: '/img/ketoan.jpg',
     title: 'Dịch vụ lập báo cáo nghiên cứu khả thi cho dự án đầu tư tại Việt Nam',
     slug: 'supcom-vietnam-2',
     category: { id: 5, title: 'Phần mềm', slug: 'phan-mem' }
   },
   {
     id: 19,
-    image: '/bg-test.png',
+    image: '/img/hddt.jpg',
+    title: 'Dịch vụ lập báo cáo nghiên cứu khả thi cho dự án đầu tư tại Việt Nam',
+    slug: 'supcom-vietnam-2',
+    category: { id: 5, title: 'Phần mềm', slug: 'phan-mem' }
+  },
+  {
+    id: 20,
+    image: '/img/cks.jpg',
     title: 'Dịch vụ lập báo cáo nghiên cứu khả thi cho dự án đầu tư tại Việt Nam',
     slug: 'supcom-vietnam-2',
     category: { id: 5, title: 'Phần mềm', slug: 'phan-mem' }

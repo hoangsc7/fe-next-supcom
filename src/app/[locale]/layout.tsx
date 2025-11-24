@@ -1,6 +1,6 @@
 import { ThemeProvider } from 'next-themes'
 import '~/app/globals.css'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Manrope } from 'next/font/google'
 import { Metadata } from 'next'
 import Footer from '../components/Footer'
 import { NextIntlClientProvider } from 'next-intl'
@@ -10,14 +10,9 @@ import Header from '../components/Header'
 import { getMessages } from 'next-intl/server'
 import ContactButton from '../components/Home/ContactButton'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin']
-})
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin']
+const manrope = Manrope({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800']
 })
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -52,13 +47,13 @@ export default async function RootLayoutLocale({
   const messages = await getMessages()
 
   return (
-    <html lang={locale} suppressHydrationWarning suppressContentEditableWarning className='bg-root'>
-      <body suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning suppressContentEditableWarning className={manrope.className}>
+      <body className='min-h-screen flex flex-col' suppressHydrationWarning>
         <ThemeProvider attribute='class' defaultTheme='light' enableSystem disableTransitionOnChange>
           <NextIntlClientProvider locale={locale} messages={messages}>
             <Header />
-            <div className='mt-18 flex justify-center'>{children}</div>
-            <div className='flex justify-center'>
+            <main className='flex-1 mt-18'>{children}</main>
+            <div>
               <Footer />
             </div>
           </NextIntlClientProvider>
