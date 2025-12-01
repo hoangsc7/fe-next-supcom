@@ -4,14 +4,15 @@ import React from 'react'
 
 const ButtonContact = () => {
   return (
-    <div className='flex justify-center py-5'>
-      <Link href='#quytrinh'>
+    <div className='flex justify-center py-5 '>
+      <Link href='#contact' passHref>
         <Button
           sx={{
+            // background: 'linear-gradient(135deg, #000066 40%, #007cf2 100%)',
             background: '#000066',
             borderRadius: '50px',
             padding: '7px 14px',
-            fontSize: { xs: '0.7rem', md: '1rem' },
+            fontSize: { xs: '14px', md: '15px' },
             textTransform: 'none',
             color: 'white',
             '&:hover': {

@@ -1,31 +1,34 @@
 import Image from 'next/image'
 import React from 'react'
-import { Button } from '@mui/material'
 import ButtonContact from '../Button/ButtonContact'
 import ButtonMore from '../Button/ButtonMore'
 
 const Banner = () => {
+  const title = 'Tim hiểu thêm'
+  const href = '/thanh-lap-cong-ty'
   return (
     <div>
       <div className='relative w-full h-[70%] aspect-9/16 md:aspect-[18/8.95]'>
         <Image
-          src='/banner/banner-2.jpg'
+          src='/banner/banner3.png'
           fill
           quality={100}
           alt='Banner Supcom'
-          priority={true}
+          priority
           className='object-cover object-[90%_90%] md:object-center'
         />
+        <div className='absolute inset-0 bg-linear-to-r from-[#000c2e] to-[#0053a5] mix-blend-plus-lighter'></div>
+
         <div className='absolute inset-0 w-full p-3 md:pl-30 flex md:items-center'>
           <div className='text-gray-50  w-full'>
-            <h1 className='text-2xl md:text-5xl font-bold uppercase drop-shadow-lg mb-2 md:mb-5'>
+            <h1 className='text-3xl md:text-5xl font-bold uppercase drop-shadow-lg mb-2 md:mb-5'>
               Dịch vụ doanh nghiệp
             </h1>
-            <h3 className='text-[12px] md:text-xl'>
+            <h3 className='text-[16px] md:text-xl'>
               Đồng hành cùng doanh nghiệp từ bước đầu thành lập <br /> đến tối ưu vận hành & phát triển
             </h3>
-            <div className=' mt-5 flex gap-2 text-sm  md:text-[20px]'>
-              <ButtonMore />
+            <div className=' mt-5 flex gap-2 text-[20px]  md:text-[20px]'>
+              <ButtonMore href={href} name={title} />
               <ButtonContact />
             </div>
           </div>

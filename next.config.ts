@@ -14,8 +14,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**'
       }
-    ]
-  }
+    ],
+    // unoptimized: true,
+  },
+  experimental: {
+        webpackMemoryOptimizations: true,
+  },
 }
 
 export default withNextIntl(nextConfig)

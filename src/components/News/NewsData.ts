@@ -13,7 +13,7 @@ export const NewsData = [
   },
   {
     id: 2,
-    image: '/bg-test.png',
+    image: '/img/bhxh.jpg',
     title: 'Dịch vụ lập báo cáo nghiên cứu khả thi cho dự án đầu tư tại Việt Nam',
     slug: 'supcom-vietnam-2',
     category: {

@@ -1,23 +1,28 @@
 import { Grid } from '@mui/material'
 import { Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
-import ChargeCard from '~/app/components/Card/ChargeCard'
-import Banner from '~/app/components/Home/Banner'
+import ChargeCard from '~/components/Thanhlapcongty/ChargeCard'
+import Banner from '~/components/Home/Banner'
+import { New } from '~/types/new'
 
 type Props = {
-  params: Promise<{ locale: string; category: string; newSlug: string }>
+  params: Promise<{ locale: string; newSlug: string }>
+}
+type Page = {
+  currentPage: number
+  data: New[]
+  total: number
+  totalPages: number
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale, category, newSlug } = await params
+  const { locale, newSlug } = await params
 
   // Fetch data bài viết từ API/database
   // const article = await fetchArticle(news, locale)
   const article = {
     title: 'Dich vu thanh lap cong ty',
-    description:
-      'Phí thành lập công ty trọn gói là 1.000.000đ. Bao gồm 250.000đ phí dịch vụ và 750.000đ phí nhà nước. Chỉ trong 3 ngày doanh nghiệp có GPKD.',
+    description: 'Dich vu thanh lap cogn ty',
     image: ''
   }
 
@@ -38,7 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: [article.image]
     },
     alternates: {
-      canonical: `https://supcom.vn/${locale}/${category}/${newSlug}`
+      canonical: `https://supcom.vn/${locale}/tin-tuc/${newSlug}`
     },
     robots: {
       index: true,
@@ -134,19 +139,21 @@ const PageNew = async () => {
                   </Grid>
                   <Grid size={{ xs: 12, md: 2.4 }}>
                     <span className='flex justify-center items-center h-7 w-7 rounded-[50%] bg-[#2595d8]'>2</span>
-                    <span>Tiếp nhận & tư vấn giấy tờ thủ tục, loại hình doanh nghiệp, chọn loại hình kinh doanh</span>
+                    <span>Soạn thảo hồ sơ thành lập và nộp hồ sơ trực tuyến tại sở KH&ĐT</span>
                   </Grid>
                   <Grid size={{ xs: 12, md: 2.4 }}>
                     <span className='flex justify-center items-center h-7 w-7 rounded-[50%] bg-[#2595d8]'>3</span>
-                    <span>Tiếp nhận & tư vấn giấy tờ thủ tục, loại hình doanh nghiệp, chọn loại hình kinh doanh</span>
+                    <span>Bàn giao hồ sơ, con dấu, biển công ty sau 3-5 ngày và công bố thông tin doanh nghiệp</span>
                   </Grid>
                   <Grid size={{ xs: 12, md: 2.4 }}>
                     <span className='flex justify-center items-center h-7 w-7 rounded-[50%] bg-[#2595d8]'>4</span>
-                    <span>Tiếp nhận & tư vấn giấy tờ thủ tục, loại hình doanh nghiệp, chọn loại hình kinh doanh</span>
+                    <span>
+                      Đăng ký chữ ký số, hòa đơn điện tử cho doanh nghiệp & hoàn thiện các thủ tục sau thành lập
+                    </span>
                   </Grid>
                   <Grid size={{ xs: 12, md: 2.4 }}>
                     <span className='flex justify-center items-center h-7 w-7 rounded-[50%] bg-[#2595d8]'>5</span>
-                    <span>Tiếp nhận & tư vấn giấy tờ thủ tục, loại hình doanh nghiệp, chọn loại hình kinh doanh</span>
+                    <span>Khai báo và thực hiện nghĩa vụ thuế, tư vấn vận hành cho doanh nghiệp sau thành lập</span>
                   </Grid>
                 </Grid>{' '}
               </div>

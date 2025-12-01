@@ -1,8 +1,8 @@
 import { Home, NavigateNext } from '@mui/icons-material'
 import { Breadcrumbs, Typography } from '@mui/material'
 import Link from 'next/link'
-import { NewsData } from '~/app/components/News/NewsData'
-import FormNews from '~/app/components/News/FormNews'
+import { NewsData } from '~/components/News/NewsData'
+import FormNews from '~/components/News/FormNews'
 // import { Category } from '~/types/new'
 import { notFound } from 'next/navigation'
 // import OutStandNews from '~/app/components/News/OutStandNews'
@@ -16,10 +16,10 @@ const PageCategory = async ({
 }) => {
   const resolvedParams = await params
 
-  const listByCategory = NewsData.filter((item) => item.category.slug === resolvedParams.category)
-  if (listByCategory.length === 0) {
-    return notFound()
-  }
+  // const listByCategory = NewsData.filter((item) => item.category.slug === resolvedParams.category)
+  // if (listByCategory.length === 0) {
+  //   return notFound()
+  // }
   return (
     <div className='flex justify-center'>
       <div className='w-full max-w-[1170px] bg-white p-1 md:p-4'>
@@ -30,12 +30,12 @@ const PageCategory = async ({
               <Home sx={{ margin: '0px 3px 3px 3px' }} fontSize='inherit' />
               Trang chủ
             </Link>
-            <Typography sx={{}}>{listByCategory[0].category.title}</Typography>
+            <Typography>Tin tức</Typography>
           </Breadcrumbs>
         </div>
         <hr />
         <div className='mt-1'>
-          <FormNews category={listByCategory[0].category} newsList={listByCategory} />
+          <FormNews newsList={NewsData} />
         </div>
       </div>
     </div>

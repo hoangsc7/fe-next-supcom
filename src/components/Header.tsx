@@ -254,6 +254,7 @@ import React, { useState } from 'react'
 import { Menu, Close } from '@mui/icons-material'
 import { useLocale, useTranslations } from 'next-intl'
 import { usePathname, useRouter } from 'next/navigation'
+import ButtonContact from './Button/ButtonContact'
 
 export default function Header() {
   const isMobile = useMediaQuery(useTheme().breakpoints.down('md'))
@@ -289,9 +290,10 @@ export default function Header() {
   const navItems = [
     { title: 'Thành lập công ty', slug: 'thanh-lap-cong-ty' },
     { title: 'Tư vấn giấy phép', slug: 'tu-van-giay-phep' },
-    { title: 'Kế toán thuế', slug: 'ke-toan-thue' },
     { title: 'Thay đổi GPKD', slug: 'thay-doi-gpkd' },
-    { title: 'Phần mềm', slug: 'phan-mem' }
+    { title: 'Phần mềm', slug: 'phan-mem' },
+    { title: 'Kế toán thuế', slug: 'ke-toan-thue' },
+    { title: 'Tin tức', slug: 'tin-tuc' }
   ]
 
   return (
@@ -299,9 +301,10 @@ export default function Header() {
       <AppBar
         position='fixed'
         sx={(theme) => ({ zIndex: theme.zIndex.drawer + 1 })}
-        className='!bg-white dark:!bg-gray-900 !text-black dark:!text-white dark:!shadow-gray-200 top-0'
+        className='bg-white! dark:bg-gray-900! text-black! dark:text-white! dark:shadow-gray-200! top-0'
       >
         {isMobile ? (
+          // Mobile
           <Toolbar>
             <div className='w-full flex justify-between'>
               <Link href={`/${locale}/`} key='logo'>
@@ -317,8 +320,8 @@ export default function Header() {
                 </div>
               </Link>
 
-              <div className='flex items-center gap-2'>
-                <Select
+              <div className='flex justify-center items-center gap-2  w-15'>
+                {/*<Select
                   id='locale'
                   name='Locale'
                   value={locale}
@@ -327,17 +330,17 @@ export default function Header() {
                   renderValue={(value) => (
                     <Box display='flex' alignItems='center'>
                       🇻🇳
-                      {/*{value === 'vi' ? '🇻🇳' : '🇬🇧'}*/}
+                      {value === 'vi' ? '🇻🇳' : '🇬🇧'}
                     </Box>
                   )}
                 >
                   <MenuItem value='vi'>🇻🇳 Tiếng Việt</MenuItem>
-                  {/*<MenuItem value='en'>🇬🇧 English</MenuItem>*/}
-                </Select>
+                  <MenuItem value='en'>🇬🇧 English</MenuItem>
+                </Select>*/}
 
-                <IconButton edge='end' color='inherit' onClick={toggleDrawer(!open)}>
-                  {open ? <Close /> : <Menu />}
-                </IconButton>
+                <div className='flex justify-center border border-gray-300 rounded-lg bg-auto'>
+                  <IconButton onClick={toggleDrawer(!open)}>{open ? <Close /> : <Menu />}</IconButton>
+                </div>
               </div>
             </div>
 
@@ -359,6 +362,7 @@ export default function Header() {
             </Drawer>
           </Toolbar>
         ) : (
+          // Desktop
           <Toolbar sx={{ display: 'flex', justifyContent: 'space-around' }}>
             <Link href={`/${locale}/`}>
               <Image
@@ -384,7 +388,9 @@ export default function Header() {
                       '&:hover': { color: '#0197dc' },
                       color: isActive(fullPath) ? '#0197dc' : 'inherit',
                       textDecoration: isActive(fullPath) ? 'underline' : 'none',
-                      textUnderlineOffset: '25px'
+                      textUnderlineOffset: '25px',
+                      fontSize: '17px',
+                      fontWeight: 500
                     }}
                   >
                     <Link href={fullPath}>{item.title}</Link>
@@ -394,7 +400,7 @@ export default function Header() {
             </Box>
 
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <Select
+              {/*<Select
                 id='locale'
                 name='Locale'
                 value={locale}
@@ -402,8 +408,10 @@ export default function Header() {
                 sx={{ color: 'black', height: '35px' }}
               >
                 <MenuItem value='vi'>🇻🇳 Tiếng Việt</MenuItem>
-                {/*<MenuItem value='en'>🇬🇧 English</MenuItem>*/}
-              </Select>
+                <MenuItem value='en'>🇬🇧 English</MenuItem>
+              </Select>*/}
+
+              <ButtonContact />
             </Box>
           </Toolbar>
         )}

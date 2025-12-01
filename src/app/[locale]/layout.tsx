@@ -2,13 +2,13 @@ import { ThemeProvider } from 'next-themes'
 import '~/app/globals.css'
 import { Manrope } from 'next/font/google'
 import { Metadata } from 'next'
-import Footer from '../components/Footer'
+import Footer from '../../components/Footer'
 import { NextIntlClientProvider } from 'next-intl'
 import { notFound } from 'next/navigation'
 import { locales } from '~/i18n/request'
-import Header from '../components/Header'
+import Header from '../../components/Header'
 import { getMessages } from 'next-intl/server'
-import ContactButton from '../components/Home/ContactButton'
+import ContactButton from '../../components/Home/ContactButton'
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -47,7 +47,13 @@ export default async function RootLayoutLocale({
   const messages = await getMessages()
 
   return (
-    <html lang={locale} suppressHydrationWarning suppressContentEditableWarning className={manrope.className}>
+    <html
+      lang={locale}
+      suppressHydrationWarning
+      suppressContentEditableWarning
+      className={manrope.className}
+      data-scroll-behavior='smooth'
+    >
       <body className='min-h-screen flex flex-col' suppressHydrationWarning>
         <ThemeProvider attribute='class' defaultTheme='light' enableSystem disableTransitionOnChange>
           <NextIntlClientProvider locale={locale} messages={messages}>
