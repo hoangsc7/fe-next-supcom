@@ -106,11 +106,11 @@ const PageNew = async () => {
           <SectionSauTL />
         </section>
 
-        <section>
+        {/* <section>
           <h1 className='text-purple-950 text-xl md:text-3xl font-semibold uppercase p-1'>Tin tức liên quan</h1>
           <hr className=' w-full h-px md:h-0.5 bg-footer border-0 mb-8' />
           <FormNews newsList={data} />
-        </section>
+        </section> */}
 
         {/* lien he */}
         {/*<div className='flex justify-center'>
