@@ -1,7 +1,7 @@
 import { Grid } from '@mui/material'
-import CardNews from '../News/CardNews'
+// import CardNews from '../News/CardNews'
 
-const data = [{ id: 1, title: 'Title 1', description: 'this is new content' }]
+// const data = [{ id: 1, title: 'Title 1', description: 'this is new content' }]
 
 const NewsTL = () => {
   return (

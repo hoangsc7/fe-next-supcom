@@ -5,7 +5,6 @@ import ApartmentIcon from '@mui/icons-material/Apartment'
 import MailIcon from '@mui/icons-material/Mail'
 import Image from 'next/image'
 import Link from 'next/link'
-import FormContact from './Form/FormContact'
 import FormContact1 from './Form/FormContact1'
 
 const Footer = () => {

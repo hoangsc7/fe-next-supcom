@@ -1,7 +1,5 @@
 import ChargeCard from '~/components/Thanhlapcongty/ChargeCard'
-import FormContact from '~/components/Form/FormContact'
 import StepTLCT from '~/components/Thanhlapcongty/SectionStepTLCT'
-import SectionServiceCard from '~/components/Thanhlapcongty/SectionServiceCard'
 import SectionPrepare from '~/components/Thanhlapcongty/SectionPrepare'
 import SectionSauTL from '~/components/Thanhlapcongty/SectionSauTL'
 import Banner2TV from '~/components/Thanhlapcongty/2tv/Banner_2tv'

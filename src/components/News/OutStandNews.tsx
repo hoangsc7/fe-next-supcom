@@ -1,5 +1,4 @@
 import { Box, Grid } from '@mui/material'
-import CardNews from './CardNews'
 
 const OutStandNews = () => {
   return (

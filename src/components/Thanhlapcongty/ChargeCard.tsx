@@ -1,4 +1,4 @@
-import { Button, Grid } from '@mui/material'
+import { Grid } from '@mui/material'
 import React from 'react'
 import ButtonContact from '../Button/ButtonContact'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
