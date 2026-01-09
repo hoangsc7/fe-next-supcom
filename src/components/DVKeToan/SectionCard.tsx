@@ -45,7 +45,7 @@ const SectionCard = () => {
     initFadeIn()
   }, [])
   return (
-    <Grid container spacing={3} viewport={{ once: true, amount: 0.3 }} className='mt-10 px-5 md:px-20'>
+    <Grid container spacing={3} className='mt-10 px-5 md:px-20'>
       {benefits.map(({ title, desc }, index) => (
         <Grid key={index} size={{ xs: 12, md: 6 }} sx={{ display: 'flex' }}>
           <div

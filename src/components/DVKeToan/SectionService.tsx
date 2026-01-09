@@ -46,7 +46,7 @@ const SectionService = () => {
   return (
     <div>
       <PopupContact open={open} onClose={() => setOpen(false)} />
-      <Grid container spacing={3} viewport={{ once: true, amount: 0.3 }}>
+      <Grid container spacing={3}>
         {services.map(({ title }, index) => (
           <Grid key={index} size={{ xs: 12, md: 4 }} sx={{ display: 'flex', paddingInline: '14px' }}>
             <div
