@@ -1,54 +1,59 @@
 import React from 'react'
-import { DesignServices, TaskAlt, EditNote, UploadFile, Campaign, Grading, SupportAgent } from '@mui/icons-material'
-
+import DesignServicesIcon from '@mui/icons-material/DesignServices'
+import TaskAltIcon from '@mui/icons-material/TaskAlt'
+import EditNoteIcon from '@mui/icons-material/EditNote'
+import UploadFileIcon from '@mui/icons-material/UploadFile'
+import CampaignIcon from '@mui/icons-material/Campaign'
+import GradingIcon from '@mui/icons-material/Grading'
+import SupportAgentIcon from '@mui/icons-material/SupportAgent'
 const StepTLCT = () => {
   const steps = [
     {
       number: '01',
       title: 'Chuẩn bị hồ sơ thành lập công ty',
-      icon: EditNote,
+      icon: EditNoteIcon,
       bgColor: '#9333EA',
       position: 'bottom'
     },
     {
       number: '02',
       title: 'Nộp hồ sơ thành lập công ty',
-      icon: UploadFile,
+      icon: UploadFileIcon,
       bgColor: '#06B6D4',
       position: 'top'
     },
     {
       number: '03',
       title: 'Bố cáo thông tin doanh nghiệp',
-      icon: Campaign,
+      icon: CampaignIcon,
       bgColor: '#10B981',
       position: 'bottom'
     },
     {
       number: '04',
       title: 'Cấp giấy chứng nhận đăng ký',
-      icon: Grading,
+      icon: GradingIcon,
       bgColor: '#EAB308',
       position: 'top'
     },
     {
       number: '05',
       title: 'Khắc dấu doanh nghiệp',
-      icon: DesignServices,
+      icon: DesignServicesIcon,
       bgColor: '#F97316',
       position: 'bottom'
     },
     {
       number: '06',
       title: 'Bàn giao kết quả cho khách hàng',
-      icon: TaskAlt,
+      icon: TaskAltIcon,
       bgColor: '#DB2777',
       position: 'top'
     },
     {
       number: '07',
       title: 'Hỗ trợ sau thành lập',
-      icon: SupportAgent,
+      icon: SupportAgentIcon,
       bgColor: '#9333EA',
       position: 'bottom'
     }

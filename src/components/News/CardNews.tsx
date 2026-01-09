@@ -18,7 +18,7 @@ const CardNews = ({ data }: Prop) => {
         <div className='p-1'>
           <Image
             src={data?.image || './bg_test.png'}
-            alt={data?.title || 'No Title'}
+            alt=''
             width={400}
             height={300}
             className='w-full h-auto shrink-0 object-cover'

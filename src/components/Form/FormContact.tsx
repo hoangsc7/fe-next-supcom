@@ -1,8 +1,8 @@
 'use client'
 import React, { ChangeEvent, useState } from 'react'
-import { Button, Grid } from '@mui/material'
-import { EmblaCarousel } from '~/components/carousel/MainCarousel'
-import { FeedbackCarousel } from '../carousel/FeedbackCarousel'
+import { Button, Grid, Input, MenuItem, Select } from '@mui/material'
+// import { EmblaCarousel } from '~/components/carousel/MainCarousel'
+// import { FeedbackCarousel } from '../carousel/FeedbackCarousel'
 
 const FormContact = () => {
   interface CustomerFormData {
@@ -80,7 +80,10 @@ const FormContact = () => {
             </div>
 
             <span className='text-white mx-2 block'>Thông tin cá nhân</span>
-            <input
+            <label htmlFor='name' className='sr-only'>
+              Họ và tên
+            </label>
+            <Input
               required
               id='name'
               name='name'
@@ -88,9 +91,17 @@ const FormContact = () => {
               placeholder='Họ và tên'
               className='bg-white w-full h-12 p-2 rounded-xl'
               value={formData.name}
-              onChange={handleChange}
+              onChange={(e) =>
+                setFormData((prev) => ({
+                  ...prev,
+                  name: e.target.value
+                }))
+              }
             />
-            <input
+            <label htmlFor='name' className='sr-only'>
+              Số điện thoại
+            </label>
+            <Input
               required
               id='phone'
               name='phone'
@@ -98,20 +109,31 @@ const FormContact = () => {
               placeholder='Số điện thoại'
               className='bg-white w-full h-12 p-2 rounded-xl'
               value={formData.phone}
-              onChange={handleChange}
+              onChange={(e) =>
+                setFormData((prev) => ({
+                  ...prev,
+                  phone: e.target.value
+                }))
+              }
             />
             <span className='text-white mx-2 block'>Dịch vụ cần tư vấn</span>
-            <select
-              id='service'
-              name='service'
+            <Select
+              sx={{
+                borderRadius: '12px'
+              }}
               className='bg-white w-full h-12 p-2 rounded-xl'
               value={formData.service}
-              onChange={handleSelectChange}
+              onChange={(e) =>
+                setFormData((prev) => ({
+                  ...prev,
+                  service: e.target.value
+                }))
+              }
             >
-              <option value='Thành lập công ty'>Thành lập công ty</option>
-              <option value='Kế toán thuế'>Kế toán thuế</option>
-              <option value='Thay đổi GPKD'>Thay đổi giấy phép kinh doanh</option>
-            </select>
+              <MenuItem value='Thành lập công ty'>Thành lập công ty</MenuItem>
+              <MenuItem value='Kế toán thuế'>Kế toán thuế</MenuItem>
+              <MenuItem value='Thay đổi GPKD'>Thay đổi giấy phép kinh doanh</MenuItem>
+            </Select>
 
             <textarea
               id='note'
@@ -133,6 +155,7 @@ const FormContact = () => {
               variant='contained'
               size='large'
               sx={{
+                marginTop: '10px',
                 padding: '.8rem 0',
                 bgcolor: '#007cf2',
                 color: 'white',
@@ -140,7 +163,7 @@ const FormContact = () => {
                 borderRadius: '12px'
               }}
             >
-              đăng ký ngay
+              đăng ký
             </Button>
           </form>
         </Grid>

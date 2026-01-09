@@ -1,8 +1,9 @@
 'use client'
-import React, { ChangeEvent, useState } from 'react'
-import { Button, Grid } from '@mui/material'
-import { EmblaCarousel } from '~/components/carousel/MainCarousel'
-import { FeedbackCarousel } from '../carousel/FeedbackCarousel'
+import React, { ChangeEvent, useEffect, useState } from 'react'
+import { Button, Grid, Input, MenuItem, Select, TextField } from '@mui/material'
+import Image from 'next/image'
+import CheckCircleIcon from '@mui/icons-material/CheckCircle'
+import { initFadeIn } from '~/hook/Animation'
 
 const FormPopup = () => {
   interface CustomerFormData {
@@ -15,7 +16,7 @@ const FormPopup = () => {
   const [formData, setFormData] = useState<CustomerFormData>({
     name: '',
     phone: '',
-    service: 'Thành lập công ty',
+    service: 'Thành lập công ty TNHH 1 thành viên',
     note: '',
     date: ''
   })
@@ -63,86 +64,201 @@ const FormPopup = () => {
       alert('Lỗi kết nối tới Google Sheets.')
     }
   }
+  useEffect(() => {
+    initFadeIn()
+  }, [])
   return (
-    <div className='w-full max-w-[795px] rounded-[20px]'>
-      <form
-        id='contact'
-        className=' w-full bg-contact p-10  min-h-[400px] md:min-h-[500px] rounded-[20px] flex flex-col gap-5'
-        onSubmit={handleSubmit}
-      >
-        <div className='text-white text-xl text-center mb-4 uppercase font-bold'></div>
+    <div className='bg-contact max-w-[795px] rounded-[20px]'>
+      <div className='flex justify-center pt-2'>
+        <Image src='/logo-dark.png' alt='logoSupcom' width={200} height={160} />
+      </div>
+      <h1 className='text-white text-center text-2xl p-2 uppercase'>Đăng ký nhận tư vấn</h1>
+      {/*<div className='flex justify-center items-center pt-6'>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.6,
+            ease: 'easeOut'
+          }}
+        >
+          <Image
+            src='/img/thusc.png'
+            width={360}
+            height={360}
+            quality={100}
+            alt='Banner Supcom'
+            className='
+        object-contain drop-shadow-[0_20px_35px_rgba(255,255,255,0.45)]
+        w-[250px] h-[250px]
+        md:w-[260px] md:h-[260px]
+        lg:w-[360px] lg:h-[360px]
+      '
+          />
+        </motion.div>
+      </div>*/}
+      <div className='fade fade-down-to-up'>
+        <div className='drop-shadow-[0_0_28px_rgba(255,255,255,0.5)]       md:drop-shadow-[0_0_45px_rgba(255,255,255,0.5)]'>
+          {/* layer cho shadow */}
 
-        <div className='mt-[200px] md:mt-[350px]'>
-          <Grid container spacing={{ xs: 1, md: 3 }}>
-            <Grid size={{ xs: 12, md: 4 }}>
-              <input
+          <div className='flex justify-between mx-5 '>
+            <div className='flex flex-col justify-center gap-2 text-[8px] md:text-[13px] font-bold'>
+              <div className='flex items-center gap-1 md:gap-2 px-2 py-2 rounded-full bg-white/10 text-white border border-white/20'>
+                <CheckCircleIcon
+                  sx={{ color: '#00b300', background: 'white', borderRadius: '100%' }}
+                  className='mr-2 inline'
+                />
+
+                <span>Thành lập doanh nghiệp trọn gói, không phát sinh chi phí</span>
+              </div>
+
+              <div className='flex items-center gap-1 md:gap-2 px-2 py-2 rounded-full bg-white/10 text-white border border-white/20'>
+                <CheckCircleIcon
+                  sx={{ color: '#00b300', background: 'white', borderRadius: '100%' }}
+                  className='mr-2 inline'
+                />{' '}
+                <span>Tư vấn pháp lý - Soạn hồ sơ thành lập - Tư vấn kế toán & thuế</span>
+              </div>
+
+              <div className='flex items-center gap-1 md:gap-2 px-2 py-2 rounded-full bg-white/10 text-white border border-white/20'>
+                <CheckCircleIcon
+                  sx={{ color: '#00b300', background: 'white', borderRadius: '100%' }}
+                  className='mr-2 inline'
+                />{' '}
+                <span>Nhanh – Gọn – Chuẩn luật</span>
+              </div>
+            </div>
+            <Image
+              width={1000}
+              height={1000}
+              src='/img/thusc.png'
+              alt='Banner Supcom'
+              className='
+          object-contain 
+          w-[150px] h-[150px]
+          md:w-[200px] md:h-[200px]
+          lg:w-[230px] lg:h-[230px]
+        '
+            />
+          </div>
+        </div>
+      </div>
+      <form id='contact' className='w-full pt-1 px-3 rounded-[20px] flex flex-col gap-5' onSubmit={handleSubmit}>
+        <div className=''>
+          <Grid container spacing={{ xs: 1, md: 1 }}>
+            <Grid size={{ xs: 12, md: 6 }}>
+              <TextField
                 required
                 id='name'
                 name='name'
-                autoComplete='name'
                 placeholder='Họ và tên'
-                className='bg-white w-full h-10 md:h-12 p-4 rounded-3xl'
                 value={formData.name}
                 onChange={handleChange}
+                fullWidth
+                variant='outlined'
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                    height: 40,
+                    borderRadius: '24px',
+                    backgroundColor: '#fff',
+
+                    '& fieldset': {
+                      borderColor: 'rgba(0,0,0,0.2)'
+                    },
+
+                    '&:hover fieldset': {
+                      borderColor: '#1976d2'
+                    },
+
+                    '&.Mui-focused fieldset': {
+                      borderColor: '#1976d2'
+                    }
+                  },
+
+                  '& input': {
+                    padding: '0 16px'
+                  }
+                }}
               />
             </Grid>
-            <Grid size={{ xs: 12, md: 4 }}>
-              <input
+            <Grid size={{ xs: 12, md: 6 }}>
+              <TextField
                 required
                 id='phone'
                 name='phone'
-                autoComplete='phone'
                 placeholder='Số điện thoại'
-                className='bg-white w-full h-10 md:h-12 p-4 rounded-3xl'
                 value={formData.phone}
                 onChange={handleChange}
+                fullWidth
+                variant='outlined'
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                    height: 40,
+                    borderRadius: '24px',
+                    backgroundColor: '#fff',
+
+                    '& fieldset': {
+                      borderColor: 'rgba(0,0,0,0.2)'
+                    },
+
+                    '&:hover fieldset': {
+                      borderColor: '#1976d2'
+                    },
+
+                    '&.Mui-focused fieldset': {
+                      borderColor: '#1976d2'
+                    }
+                  },
+
+                  '& input': {
+                    padding: '0 16px'
+                  }
+                }}
               />
             </Grid>
-            <Grid size={{ xs: 12, md: 4 }}>
-              <select
+            <Grid size={{ xs: 12, md: 12 }}>
+              <Select
+                sx={{
+                  borderRadius: '24px',
+                  padding: '10px 3px'
+                }}
                 id='service'
                 name='service'
-                className='bg-white w-full h-10 md:h-12 px-3 rounded-3xl'
+                className='bg-white w-full h-10 md:h-10'
                 value={formData.service}
-                onChange={handleSelectChange}
+                onChange={(e) =>
+                  setFormData((prev) => ({
+                    ...prev,
+                    service: e.target.value
+                  }))
+                }
               >
-                <option value='Thành lập công ty'>Thành lập công ty</option>
-                <option value='Kế toán thuế'>Kế toán thuế</option>
-                <option value='Thay đổi GPKD'>Thay đổi giấy phép kinh doanh</option>
-              </select>
+                <MenuItem value='Thành lập công ty TNHH 1 thành viên'>Thành lập công ty TNHH 1 thành viên</MenuItem>
+                <MenuItem value='Thành lập công ty TNHH 2 thành viên'>Thành lập công ty TNHH 2 thành viên</MenuItem>
+                <MenuItem value='Thành lập công ty Cổ phần'>Thành lập công ty Cổ phần</MenuItem>
+                <MenuItem value='Thành lập hợp tác xã'>Thành lập hợp tác xã</MenuItem>
+                <MenuItem value='Dịch vụ kế toán'>Dịch vụ kế toán</MenuItem>
+              </Select>
             </Grid>
           </Grid>
         </div>
-
-        {/*<textarea
-          id='note'
-          name='note'
-          placeholder='Ghi chú'
-          className='bg-white w-full h-28 p-2 resize-none rounded-xl'
-          value={formData.note}
-          onChange={(e) =>
-            setFormData((prev) => ({
-              ...prev,
-              note: e.target.value
-            }))
-          }
-        />*/}
-
-        <Button
-          fullWidth
-          type='submit'
-          variant='contained'
-          size='small'
-          sx={{
-            padding: '0.8rem 0',
-            bgcolor: '#007cf2',
-            color: 'white',
-            textTransform: 'uppercase',
-            borderRadius: '24px'
-          }}
-        >
-          Nhận tư vấn ngay
-        </Button>
+        <div className='flex justify-center mb-2'>
+          <Button
+            type='submit'
+            variant='contained'
+            size='small'
+            sx={{
+              border: '2px solid white',
+              padding: '0.5rem 1rem',
+              bgcolor: '#007cf2',
+              color: 'white',
+              textTransform: 'uppercase',
+              borderRadius: '24px'
+            }}
+          >
+            Gửi thông tin
+          </Button>
+        </div>
       </form>
     </div>
   )

@@ -6,7 +6,7 @@ const ContactButton = () => {
     <div>
       <div className='fixed bottom-10 right-6 flex flex-col items-center gap-3 z-50'>
         <a
-          href='https://zalo.me/0336069232'
+          href='https://zalo.me/0902243546'
           target='_blank'
           rel='noopener noreferrer'
           className=' relative w-14 h-14 flex items-center justify-center bg-[#0068ff] text-white rounded-full shadow-lg hover:scale-110 transition-transform '
@@ -30,7 +30,7 @@ const ContactButton = () => {
           <Image src='/icon/mess-logo1.png' alt='Zalo' width={40} height={40} className='object-contain z-10' />
         </a>
         <a
-          href='tel:0336069232'
+          href='tel:0902243546'
           className='relative w-14 h-14 flex items-center justify-center bg-green-500 text-white rounded-full shadow-lg hover:scale-110 transition-transform '
         >
           <span

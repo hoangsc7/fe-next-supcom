@@ -251,7 +251,8 @@ import {
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
-import { Menu, Close } from '@mui/icons-material'
+import MenuIcon from '@mui/icons-material/Menu'
+import CloseIcon from '@mui/icons-material/Close'
 import { useLocale, useTranslations } from 'next-intl'
 import { usePathname, useRouter } from 'next/navigation'
 import ButtonContact from './Button/ButtonContact'
@@ -292,7 +293,7 @@ export default function Header() {
     { title: 'Tư vấn giấy phép', slug: 'tu-van-giay-phep' },
     { title: 'Thay đổi GPKD', slug: 'thay-doi-gpkd' },
     { title: 'Phần mềm', slug: 'phan-mem' },
-    { title: 'Kế toán thuế', slug: 'ke-toan-thue' },
+    { title: 'Dịch vụ kế toán', slug: 'dich-vu-ke-toan' },
     { title: 'Tin tức', slug: 'tin-tuc' }
   ]
 
@@ -339,7 +340,7 @@ export default function Header() {
                 </Select>*/}
 
                 <div className='flex justify-center border border-gray-300 rounded-lg bg-auto'>
-                  <IconButton onClick={toggleDrawer(!open)}>{open ? <Close /> : <Menu />}</IconButton>
+                  <IconButton onClick={toggleDrawer(!open)}>{open ? <CloseIcon /> : <MenuIcon />}</IconButton>
                 </div>
               </div>
             </div>

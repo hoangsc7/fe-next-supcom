@@ -7,9 +7,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 import Banner from '../../components/Home/Banner'
 import Image from 'next/image'
-import FormContact from '../../components/Form/FormContact'
 import { EmblaCarousel } from '~/components/carousel/MainCarousel'
-import { ArrowForward } from '@mui/icons-material'
+import ServiceSection from '~/components/Home/ServiceSection'
 
 export const metadata: Metadata = {
   title: 'Dịch vụ thành lập doanh nghiệp và tư vấn pháp lý'
@@ -21,6 +20,7 @@ export default async function Home() {
   const data: New[] = NewsData.slice(0, 4).map((news) => ({
     ...news
   }))
+
   // console.log('data', data)
 
   // const groupedByCategory = NewsData.reduce(
@@ -57,7 +57,7 @@ export default async function Home() {
             </div>
 
             {/* cac dich vu */}
-            <div>
+            {/*<div>
               <h1 className='text-purple-950 text-xl md:text-3xl text-center font-semibold uppercase mt-10 mb-5 mx-5'>
                 Các dịch vụ chúng tôi cung cấp
               </h1>
@@ -77,8 +77,8 @@ export default async function Home() {
                     <span>Hỗ trợ thành lập từ A-Z</span> <br />
                     <span>Không phát sinh chi phí</span>
                     <div className='mt-5'>
-                      <Link href={'/thanh-lap-cong-ty'}>
-                        Xem thêm <ArrowForward fontSize='small' />
+                      <Link href={'/#charge'}>
+                        Đăng ký nhận tư vấn <ArrowForward fontSize='small' />
                       </Link>
                     </div>
                   </div>
@@ -97,7 +97,7 @@ export default async function Home() {
                     <span>Không phát sinh chi phí</span>
                     <div className='mt-5'>
                       <Link href={'/thanh-lap-cong-ty'}>
-                        Xem thêm <ArrowForward fontSize='small' />
+                        Đăng ký nhận tư vấn <ArrowForward fontSize='small' />
                       </Link>
                     </div>
                   </div>
@@ -116,7 +116,7 @@ export default async function Home() {
                     <span>Không phát sinh chi phí</span>
                     <div className='mt-5'>
                       <Link href={'/thanh-lap-cong-ty'}>
-                        Xem thêm <ArrowForward fontSize='small' />
+                        Đăng ký nhận tư vấn <ArrowForward fontSize='small' />
                       </Link>
                     </div>
                   </div>
@@ -135,7 +135,7 @@ export default async function Home() {
                     <span>Không phát sinh chi phí</span>
                     <div className='mt-5'>
                       <Link href={'/thanh-lap-cong-ty'}>
-                        Xem thêm <ArrowForward fontSize='small' />
+                        Đăng ký nhận tư vấn <ArrowForward fontSize='small' />
                       </Link>
                     </div>
                   </div>
@@ -154,13 +154,14 @@ export default async function Home() {
                     <span>Không phát sinh chi phí</span>
                     <div className='mt-5'>
                       <Link href={'/thanh-lap-cong-ty'}>
-                        Xem thêm <ArrowForward fontSize='small' />
+                        Đăng ký nhận tư vấn <ArrowForward fontSize='small' />
                       </Link>
                     </div>
                   </div>
                 </Grid>
               </Grid>
-            </div>
+            </div>*/}
+            <ServiceSection />
 
             {/* tai sao ban nen chon Supcom */}
             <div className='text-center p-2'>
@@ -287,9 +288,10 @@ export default async function Home() {
             </div>
           </div>
         </div>
-        <div className=' flex justify-center '>
+        {/*<div className=' flex justify-center '>
           <FormContact />
-        </div>
+        </div>*/}
+        {/*<HomeClient />*/}
       </div>
     </>
   )

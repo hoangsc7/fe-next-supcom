@@ -34,7 +34,7 @@ export default function PopupContact({ open, onClose, autoOpen = false, delay = 
         sx: {
           borderRadius: '20px',
           overflow: 'hidden',
-          maxWidth: '790px'
+          maxHeight: '530px'
         }
       }}
     >

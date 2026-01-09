@@ -8,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/admin', '/api']
     },
-    sitemap: 'https://supcom.vn/sitemap.xml',
-    host: 'https://supcom.vn'
+    sitemap: 'http://localhost:3000/sitemap.xml',
+    host: 'http://localhost:3000'
   }
 }

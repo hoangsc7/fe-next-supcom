@@ -6,13 +6,15 @@ import Footer from '../../components/Footer'
 import { NextIntlClientProvider } from 'next-intl'
 import { notFound } from 'next/navigation'
 import { locales } from '~/i18n/request'
-import Header from '../../components/Header'
+import Header from '../../components/Headerss'
 import { getMessages } from 'next-intl/server'
 import ContactButton from '../../components/Home/ContactButton'
+import { Toolbar } from '@mui/material'
 
 const manrope = Manrope({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800']
+  weight: ['300', '400', '500', '600', '700', '800'],
+  display: 'swap'
 })
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -58,7 +60,12 @@ export default async function RootLayoutLocale({
         <ThemeProvider attribute='class' defaultTheme='light' enableSystem disableTransitionOnChange>
           <NextIntlClientProvider locale={locale} messages={messages}>
             <Header />
-            <main className='flex-1 mt-18'>{children}</main>
+            <Toolbar />
+            <main className='flex-1'>{children}</main>
+            {/*<main className='flex-1'>
+                <div style={{ height: '64px' }} />
+                {children}
+              </main>*/}
             <div>
               <Footer />
             </div>

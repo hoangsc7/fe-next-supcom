@@ -432,10 +432,177 @@
 //     </div>
 //   )
 // }
-import React from 'react'
 
-function Headerss() {
-  return <div></div>
+'use client'
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  List,
+  IconButton,
+  Drawer,
+  ListItemButton,
+  ListItemText,
+  Select,
+  MenuItem
+} from '@mui/material'
+import Image from 'next/image'
+import Link from 'next/link'
+import React, { useState } from 'react'
+import MenuIcon from '@mui/icons-material/Menu'
+import CloseIcon from '@mui/icons-material/Close'
+import { useLocale } from 'next-intl'
+import { usePathname, useRouter } from 'next/navigation'
+import ButtonContact from './Button/ButtonContact'
+
+export default function Header() {
+  const [open, setOpen] = useState(false)
+  const router = useRouter()
+  const toggleDrawer = (value: boolean) => () => setOpen(value)
+  const changeLanguage = (newLocale: string) => {
+    const segments = pathname.split('/')
+    // segments[0] = '' (because pathname starts with '/')
+    // segments[1] is current locale (if present)
+    if (segments.length > 1) segments[1] = newLocale
+    else segments[1] = newLocale
+    const newPath = segments.join('/')
+    router.push(newPath)
+  }
+  const locale = useLocale()
+  const pathname = usePathname() || '/'
+
+  const navItems = [
+    { title: 'Thành lập công ty', slug: 'thanh-lap-cong-ty' },
+    { title: 'Tư vấn giấy phép', slug: 'tu-van-giay-phep' },
+    { title: 'Thay đổi GPKD', slug: 'thay-doi-gpkd' },
+    { title: 'Phần mềm', slug: 'phan-mem' },
+    { title: 'Dịch vụ kế toán', slug: 'dich-vu-ke-toan' },
+    { title: 'Tin tức', slug: 'tin-tuc' }
+  ]
+
+  const isActive = (path: string) => pathname.startsWith(path)
+
+  return (
+    <AppBar
+      position='fixed'
+      sx={(theme) => ({
+        zIndex: theme.zIndex.drawer + 1,
+        bgcolor: 'white',
+        color: 'black',
+        boxShadow: '0 1px 6px rgba(0,0,0,0.08)'
+      })}
+    >
+      <Toolbar sx={{ px: 2 }}>
+        {/* ================= MOBILE ================= */}
+        <Box
+          sx={{
+            display: { xs: 'flex', md: 'none' },
+            width: '100%',
+            justifyContent: 'space-between',
+            alignItems: 'center'
+          }}
+        >
+          <Link href={`/${locale}/`}>
+            <Image src='/logo-light.png' alt='Logo' width={140} height={60} priority />
+          </Link>
+
+          <div className='flex justify-center items-center gap-2  w-15'>
+            {/*<Select
+                  id='locale'
+                  name='Locale'
+                  value={locale}
+                  onChange={(e) => changeLanguage(String(e.target.value))}
+                  sx={{ color: 'black', height: '35px', minWidth: 50 }}
+                  renderValue={(value) => (
+                    <Box display='flex' alignItems='center'>
+                      🇻🇳
+                      {value === 'vi' ? '🇻🇳' : '🇬🇧'}
+                    </Box>
+                  )}
+                >
+                  <MenuItem value='vi'>🇻🇳 Tiếng Việt</MenuItem>
+                  <MenuItem value='en'>🇬🇧 English</MenuItem>
+                </Select>*/}
+
+            <div className='flex justify-center border border-gray-300 rounded-lg bg-auto'>
+              <IconButton onClick={toggleDrawer(!open)} aria-label={open ? 'Đóng menu' : 'Mở menu'}>
+                {open ? <CloseIcon /> : <MenuIcon />}
+              </IconButton>
+            </div>
+          </div>
+
+          <Drawer anchor='top' open={open} onClose={toggleDrawer(false)}>
+            <Box sx={{ mt: 8 }}>
+              <List>
+                {navItems.map((item) => (
+                  <ListItemButton
+                    key={item.title}
+                    component={Link}
+                    href={`/${locale}/${item.slug}`}
+                    onClick={toggleDrawer(false)}
+                  >
+                    <ListItemText primary={item.title} />
+                  </ListItemButton>
+                ))}
+              </List>
+            </Box>
+          </Drawer>
+        </Box>
+
+        {/* ================= DESKTOP ================= */}
+        <Box
+          sx={{
+            display: { xs: 'none', md: 'flex' },
+            width: '100%',
+            justifyContent: 'space-around',
+            alignItems: 'center'
+          }}
+        >
+          <Link href={`/${locale}/`}>
+            <Image src='/logo-light.png' alt='Logo' width={160} height={80} priority />
+          </Link>
+
+          <Box sx={{ display: 'flex' }}>
+            {navItems.map((item) => {
+              const path = `/${locale}/${item.slug}`
+              return (
+                <Box
+                  key={item.title}
+                  sx={{
+                    px: 2,
+                    fontSize: '17px',
+                    fontWeight: 500,
+                    color: isActive(path) ? '#0197dc' : 'inherit',
+                    textDecoration: isActive(path) ? 'underline' : 'none',
+                    textUnderlineOffset: '24px',
+                    transition: 'color 0.2s',
+                    '&:hover': { color: '#0197dc' }
+                  }}
+                >
+                  <Link href={path} prefetch={false}>
+                    {item.title}
+                  </Link>
+                </Box>
+              )
+            })}
+          </Box>
+
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            {/* <Select
+              id='locale'
+              name='Locale'
+              value={locale}
+              onChange={(e) => changeLanguage(String(e.target.value))}
+              sx={{ color: 'black', height: '35px' }}
+            >
+              <MenuItem value='vi'>🇻🇳 Tiếng Việt</MenuItem>
+              <MenuItem value='en'>🇬🇧 English</MenuItem>
+            </Select>*/}
+
+            <ButtonContact />
+          </Box>
+        </Box>
+      </Toolbar>
+    </AppBar>
+  )
 }
-
-export default Headerss

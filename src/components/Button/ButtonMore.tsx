@@ -4,7 +4,7 @@ import React from 'react'
 
 const ButtonMore = ({ href, name }: { href: string; name: string }) => {
   return (
-    <div className='flex justify-center py-5'>
+    <div>
       <Link href={href}>
         <Button
           sx={{

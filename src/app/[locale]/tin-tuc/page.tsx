@@ -1,4 +1,5 @@
-import { Home, NavigateNext } from '@mui/icons-material'
+import HomeIcon from '@mui/icons-material/Home'
+import NavigateNextIcon from '@mui/icons-material/NavigateNext'
 import { Breadcrumbs, Typography } from '@mui/material'
 import Link from 'next/link'
 import { NewsData } from '~/components/News/NewsData'
@@ -25,9 +26,9 @@ const PageCategory = async ({
       <div className='w-full max-w-[1170px] bg-white p-1 md:p-4'>
         <hr />
         <div className='flex justify-center pt-2 pb-2 h-auto '>
-          <Breadcrumbs sx={{ width: '100%' }} aria-label='breadcrumb' separator={<NavigateNext fontSize='small' />}>
+          <Breadcrumbs sx={{ width: '100%' }} aria-label='breadcrumb' separator={<NavigateNextIcon fontSize='small' />}>
             <Link color='inherit' href={`/${resolvedParams.locale}/`}>
-              <Home sx={{ margin: '0px 3px 3px 3px' }} fontSize='inherit' />
+              <HomeIcon sx={{ margin: '0px 3px 3px 3px' }} fontSize='inherit' />
               Trang chủ
             </Link>
             <Typography>Tin tức</Typography>
