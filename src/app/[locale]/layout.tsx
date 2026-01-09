@@ -15,6 +15,8 @@ import { ThemeProvider } from 'next-themes'
 import Header from '~/components/Headerss'
 import { TableSortLabel, Toolbar } from '@mui/material'
 
+export const dynamic = 'force-dynamic'
+
 const manrope = Manrope({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700', '800'],
