@@ -143,8 +143,8 @@ export default async function Home() {
             </div> */}
 
             {/* chia se cua khach hang */}
-            <div>
-              <h1 className='text-purple-950 text-xl md:text-3xl text-center font-semibold uppercase mt-10 mb-5 mx-5'>
+            <div className='py-10'>
+              <h1 className='text-purple-950 text-xl md:text-3xl text-center font-semibold uppercase  mb-5  mx-5'>
                 Chia sẻ của khách hàng sử dụng dịch vụ
               </h1>
               <EmblaCarousel />

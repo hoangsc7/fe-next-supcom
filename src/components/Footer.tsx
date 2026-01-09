@@ -118,7 +118,7 @@ const Footer = () => {
                   />
                 </Link>
               </div>
-              <div className='my-5 w-full h-[230px] rounded-xl overflow-hidden'>
+              <div className='my-5 w-full h-full rounded-xl overflow-hidden'>
                 <GoogleMap />
               </div>
             </Grid>
