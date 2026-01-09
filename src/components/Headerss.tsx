@@ -437,16 +437,16 @@
 import { AppBar, Box, Toolbar, List, IconButton, Drawer, ListItemButton, ListItemText } from '@mui/material'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu'
 import CloseIcon from '@mui/icons-material/Close'
 import { useLocale } from 'next-intl'
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import ButtonContact from './Button/ButtonContact'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
-  const router = useRouter()
+  // const router = useRouter()
   const toggleDrawer = (value: boolean) => () => setOpen(value)
   // const changeLanguage = (newLocale: string) => {
   //   const segments = pathname.split('/')

@@ -1,4 +1,4 @@
-import { ThemeProvider } from 'next-themes'
+// import { ThemeProvider } from 'next-themes'
 import '~/app/globals.css'
 import { Manrope } from 'next/font/google'
 import { Metadata } from 'next'
@@ -6,10 +6,14 @@ import Footer from '../../components/Footer'
 import { NextIntlClientProvider } from 'next-intl'
 import { notFound } from 'next/navigation'
 import { locales } from '~/i18n/request'
-import Header from '../../components/Headerss'
+
 import { getMessages } from 'next-intl/server'
 import ContactButton from '../../components/Home/ContactButton'
-import { Toolbar } from '@mui/material'
+import ClientHeader from '~/components/ClientHeader'
+import ThemeRegistry from '~/components/theme/ThemeRegistry'
+import { ThemeProvider } from 'next-themes'
+import Header from '~/components/Headerss'
+import { TableSortLabel, Toolbar } from '@mui/material'
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -56,21 +60,32 @@ export default async function RootLayoutLocale({
       className={manrope.className}
       data-scroll-behavior='smooth'
     >
-      <body className='min-h-screen flex flex-col' suppressHydrationWarning>
+      <body className='min-h-screen flex flex-col'>
         <ThemeProvider attribute='class' defaultTheme='light' enableSystem disableTransitionOnChange>
           <NextIntlClientProvider locale={locale} messages={messages}>
-            <Header />
-            <Toolbar />
+            <ClientHeader />
+
             <main className='flex-1'>{children}</main>
-            {/*<main className='flex-1'>
-                <div style={{ height: '64px' }} />
-                {children}
-              </main>*/}
+            {/* <main className='flex-1'>
+              <div style={{ height: '64px' }} />
+              {children}
+            </main> */}
             <div>
               <Footer />
             </div>
           </NextIntlClientProvider>
         </ThemeProvider>
+        {/* <ThemeRegistry>
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            <ClientHeader />
+
+            <main className='flex-1'>{children}</main>
+            
+            <div>
+              <Footer />
+            </div>
+          </NextIntlClientProvider>
+        </ThemeRegistry> */}
         <ContactButton />
       </body>
     </html>

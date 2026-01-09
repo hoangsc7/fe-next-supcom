@@ -20,19 +20,19 @@ const FormContact = () => {
     date: ''
   })
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value
-    }))
-  }
-  const handleSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    setFormData((prev) => ({
-      ...prev,
-      service: e.target.value
-    }))
-  }
+  // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const { name, value } = e.target
+  //   setFormData((prev) => ({
+  //     ...prev,
+  //     [name]: value
+  //   }))
+  // }
+  // const handleSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
+  //   setFormData((prev) => ({
+  //     ...prev,
+  //     service: e.target.value
+  //   }))
+  // }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
