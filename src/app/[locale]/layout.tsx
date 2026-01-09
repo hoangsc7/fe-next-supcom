@@ -1,23 +1,20 @@
 import { ThemeProvider } from 'next-themes'
 import '~/app/globals.css'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Manrope } from 'next/font/google'
 import { Metadata } from 'next'
-import Footer from '../components/Footer'
+import Footer from '../../components/Footer'
 import { NextIntlClientProvider } from 'next-intl'
 import { notFound } from 'next/navigation'
 import { locales } from '~/i18n/request'
-import Header from '../components/Header'
+import Header from '../../components/Headerss'
 import { getMessages } from 'next-intl/server'
-import ContactButton from '../components/Home/ContactButton'
+import ContactButton from '../../components/Home/ContactButton'
+import { Toolbar } from '@mui/material'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin']
-})
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin']
+const manrope = Manrope({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800'],
+  display: 'swap'
 })
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -52,13 +49,24 @@ export default async function RootLayoutLocale({
   const messages = await getMessages()
 
   return (
-    <html lang={locale} suppressHydrationWarning suppressContentEditableWarning className='bg-root'>
-      <body suppressHydrationWarning>
+    <html
+      lang={locale}
+      suppressHydrationWarning
+      suppressContentEditableWarning
+      className={manrope.className}
+      data-scroll-behavior='smooth'
+    >
+      <body className='min-h-screen flex flex-col' suppressHydrationWarning>
         <ThemeProvider attribute='class' defaultTheme='light' enableSystem disableTransitionOnChange>
           <NextIntlClientProvider locale={locale} messages={messages}>
             <Header />
-            <div className='mt-18 flex justify-center'>{children}</div>
-            <div className='flex justify-center'>
+            <Toolbar />
+            <main className='flex-1'>{children}</main>
+            {/*<main className='flex-1'>
+                <div style={{ height: '64px' }} />
+                {children}
+              </main>*/}
+            <div>
               <Footer />
             </div>
           </NextIntlClientProvider>

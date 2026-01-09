@@ -15,6 +15,9 @@ const nextConfig: NextConfig = {
         pathname: '/**'
       }
     ]
+  },
+  experimental: {
+    webpackMemoryOptimizations: true
   }
 }
 
