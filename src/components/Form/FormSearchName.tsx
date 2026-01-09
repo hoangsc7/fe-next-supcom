@@ -1,8 +1,6 @@
 'use client'
-import React, { ChangeEvent, useState } from 'react'
+import React, { useState } from 'react'
 import { Button, Grid, Input, TextField } from '@mui/material'
-import { EmblaCarousel } from '~/components/carousel/MainCarousel'
-import { FeedbackCarousel } from '../carousel/FeedbackCarousel'
 import Image from 'next/image'
 
 const FormSearchName = () => {

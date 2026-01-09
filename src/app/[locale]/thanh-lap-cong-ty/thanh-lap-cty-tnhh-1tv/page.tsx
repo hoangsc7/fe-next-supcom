@@ -1,14 +1,7 @@
-import BannerTLDN from '~/components/Thanhlapcongty/Banner_tlct'
 import ChargeCard from '~/components/Thanhlapcongty/ChargeCard'
-import FormContact from '~/components/Form/FormContact'
 import StepTLCT from '~/components/Thanhlapcongty/SectionStepTLCT'
-import SectionServiceCard from '~/components/Thanhlapcongty/SectionServiceCard'
-import FormNews from '~/components/News/FormNews'
-import { NewsData } from '~/components/News/NewsData'
-import { New } from '~/types/new'
 import SectionPrepare from '~/components/Thanhlapcongty/SectionPrepare'
 import SectionSauTL from '~/components/Thanhlapcongty/SectionSauTL'
-import PopupContact from '~/components/Form/PopupContact'
 import Banner1TV from '~/components/Thanhlapcongty/1tv/Banner_1tv'
 
 const TNHH1 = () => {
@@ -52,7 +45,6 @@ const TNHH1 = () => {
 
         {/* lien he */}
       </main>
-      {/*<PopupContact autoOpen delay={1000} />*/}
     </div>
   )
 }

@@ -1,7 +1,5 @@
 import ChargeCard from '~/components/Thanhlapcongty/ChargeCard'
-import FormContact from '~/components/Form/FormContact'
 import StepTLCT from '~/components/Thanhlapcongty/SectionStepTLCT'
-import SectionServiceCard from '~/components/Thanhlapcongty/SectionServiceCard'
 import SectionPrepare from '~/components/Thanhlapcongty/SectionPrepare'
 import SectionSauTL from '~/components/Thanhlapcongty/SectionSauTL'
 import BannerCP from '~/components/Thanhlapcongty/cp/Banner_cp'
@@ -44,7 +42,6 @@ const CP = () => {
           <SectionSauTL />
         </section>
       </main>
-      {/*<PopupContact autoOpen delay={1000} />*/}
     </div>
   )
 }

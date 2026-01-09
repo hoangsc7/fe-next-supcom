@@ -1,6 +1,6 @@
 'use client'
-import React, { ChangeEvent, useState } from 'react'
-import { Button, Grid, Input, MenuItem, Select } from '@mui/material'
+import React, { useState } from 'react'
+import { Button, Input, MenuItem, Select } from '@mui/material'
 // import { EmblaCarousel } from '~/components/carousel/MainCarousel'
 // import { FeedbackCarousel } from '../carousel/FeedbackCarousel'
 
@@ -15,7 +15,7 @@ const FormContact1 = () => {
   const [formData, setFormData] = useState<CustomerFormData>({
     name: '',
     phone: '',
-    service: 'Thành lập công ty',
+    service: 'Thành lập công ty TNHH 1 thành viên',
     note: '',
     date: ''
   })
@@ -120,9 +120,11 @@ const FormContact1 = () => {
             }))
           }
         >
-          <MenuItem value='Thành lập công ty'>Thành lập công ty</MenuItem>
-          <MenuItem value='Kế toán thuế'>Kế toán thuế</MenuItem>
-          <MenuItem value='Thay đổi GPKD'>Thay đổi giấy phép kinh doanh</MenuItem>
+          <MenuItem value='Thành lập công ty TNHH 1 thành viên'>Thành lập công ty TNHH 1 thành viên</MenuItem>
+          <MenuItem value='Thành lập công ty TNHH 2 thành viên'>Thành lập công ty TNHH 2 thành viên</MenuItem>
+          <MenuItem value='Thành lập công ty Cổ phần'>Thành lập công ty Cổ phần</MenuItem>
+          <MenuItem value='Thành lập hợp tác xã'>Thành lập hợp tác xã</MenuItem>
+          <MenuItem value='Dịch vụ kế toán'>Dịch vụ kế toán</MenuItem>
         </Select>
 
         <textarea

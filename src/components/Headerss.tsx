@@ -434,18 +434,7 @@
 // }
 
 'use client'
-import {
-  AppBar,
-  Box,
-  Toolbar,
-  List,
-  IconButton,
-  Drawer,
-  ListItemButton,
-  ListItemText,
-  Select,
-  MenuItem
-} from '@mui/material'
+import { AppBar, Box, Toolbar, List, IconButton, Drawer, ListItemButton, ListItemText } from '@mui/material'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
@@ -459,15 +448,15 @@ export default function Header() {
   const [open, setOpen] = useState(false)
   const router = useRouter()
   const toggleDrawer = (value: boolean) => () => setOpen(value)
-  const changeLanguage = (newLocale: string) => {
-    const segments = pathname.split('/')
-    // segments[0] = '' (because pathname starts with '/')
-    // segments[1] is current locale (if present)
-    if (segments.length > 1) segments[1] = newLocale
-    else segments[1] = newLocale
-    const newPath = segments.join('/')
-    router.push(newPath)
-  }
+  // const changeLanguage = (newLocale: string) => {
+  //   const segments = pathname.split('/')
+  //   // segments[0] = '' (because pathname starts with '/')
+  //   // segments[1] is current locale (if present)
+  //   if (segments.length > 1) segments[1] = newLocale
+  //   else segments[1] = newLocale
+  //   const newPath = segments.join('/')
+  //   router.push(newPath)
+  // }
   const locale = useLocale()
   const pathname = usePathname() || '/'
 
@@ -476,8 +465,8 @@ export default function Header() {
     { title: 'Tư vấn giấy phép', slug: 'tu-van-giay-phep' },
     { title: 'Thay đổi GPKD', slug: 'thay-doi-gpkd' },
     { title: 'Phần mềm', slug: 'phan-mem' },
-    { title: 'Dịch vụ kế toán', slug: 'dich-vu-ke-toan' },
-    { title: 'Tin tức', slug: 'tin-tuc' }
+    { title: 'Dịch vụ kế toán', slug: 'dich-vu-ke-toan' }
+    // { title: 'Tin tức', slug: 'tin-tuc' }
   ]
 
   const isActive = (path: string) => pathname.startsWith(path)

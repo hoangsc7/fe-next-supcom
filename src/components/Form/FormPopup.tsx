@@ -1,6 +1,6 @@
 'use client'
 import React, { ChangeEvent, useEffect, useState } from 'react'
-import { Button, Grid, Input, MenuItem, Select, TextField } from '@mui/material'
+import { Button, Grid, MenuItem, Select, TextField } from '@mui/material'
 import Image from 'next/image'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import { initFadeIn } from '~/hook/Animation'
@@ -28,12 +28,12 @@ const FormPopup = () => {
       [name]: value
     }))
   }
-  const handleSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    setFormData((prev) => ({
-      ...prev,
-      service: e.target.value
-    }))
-  }
+  // const handleSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
+  //   setFormData((prev) => ({
+  //     ...prev,
+  //     service: e.target.value
+  //   }))
+  // }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()

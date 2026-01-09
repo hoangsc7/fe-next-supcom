@@ -15,7 +15,7 @@ import createMiddleware from 'next-intl/middleware'
 import { NextRequest } from 'next/server'
 import { locales, defaultLocale } from '~/i18n/request'
 
-console.log('🧩 middleware.ts LOADED')
+// console.log('🧩 middleware.ts LOADED')
 
 const middleware = createMiddleware({
   locales,
@@ -25,7 +25,7 @@ const middleware = createMiddleware({
 })
 
 export default function (req: NextRequest) {
-  console.log('🔥 Middleware RUNNING on:', req.nextUrl.pathname)
+  // console.log('🔥 Middleware RUNNING on:', req.nextUrl.pathname)
   return middleware(req)
 }
 

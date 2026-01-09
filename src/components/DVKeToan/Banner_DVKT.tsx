@@ -2,8 +2,6 @@ import Image from 'next/image'
 import ButtonContact from '../Button/ButtonContact'
 
 const BannerDVKT = () => {
-  const title = 'Bảng giá dịch vụ'
-  const href = '#charge'
   return (
     <div className='relative w-full overflow-hidden'>
       {/* Background */}
@@ -19,7 +17,7 @@ const BannerDVKT = () => {
           <h1 className='text-2xl md:text-4xl font-bold uppercase drop-shadow-lg my-4 leading-snug'>
             <span className=''>Dịch vụ kế toán trọn gói </span>
             <br />
-            chỉ từ
+            chỉ từ 1.500.000 VNĐ/tháng
           </h1>
 
           <div className='items-start'>
