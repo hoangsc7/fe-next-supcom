@@ -62,7 +62,7 @@ const Footer = () => {
                   <br />
                   <div>
                     <span className='text-gray-300'>
-                      Tầng 6 Tòa nhà VCCI số 01 Đại lộ Lenin, Phường Trường Vinh, T.Nghệ An
+                      Tầng 6 Tòa nhà VCCI số 01 Đại lộ Lê Nin, Phường Trường Vinh, T.Nghệ An
                     </span>
                   </div>
                 </li>

@@ -10,10 +10,7 @@ import { locales } from '~/i18n/request'
 import { getMessages } from 'next-intl/server'
 import ContactButton from '../../components/Home/ContactButton'
 import ClientHeader from '~/components/ClientHeader'
-import ThemeRegistry from '~/components/theme/ThemeRegistry'
 import { ThemeProvider } from 'next-themes'
-import Header from '~/components/Headerss'
-import { TableSortLabel, Toolbar } from '@mui/material'
 
 export const dynamic = 'force-dynamic'
 

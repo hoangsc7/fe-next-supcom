@@ -22,7 +22,7 @@ const Banner2TV = () => {
         <div className='flex flex-col justify-center w-full md:w-1/2 text-gray-50'>
           <h1 className='text-3xl md:text-2xl font-bold uppercase drop-shadow-lg my-4'>
             <span className='text-orange-300'>Thành lập Công ty TNHH 2 thành viên trọn gói</span>
-            <br /> chỉ từ 1.190.000VNĐ
+            <br /> chỉ từ 1.490.000 VNĐ
           </h1>
 
           <h3 className='text-[16px] md:text-xl my-2'>
