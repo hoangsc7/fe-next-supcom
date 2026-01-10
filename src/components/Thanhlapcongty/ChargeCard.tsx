@@ -17,7 +17,7 @@ const ChargeCard = () => {
             <h2 className='text-gray-600 text-2xl md:text-3xl text-center py-2'>
               Gói cơ bản
               <br />
-              1.190.000 VNĐ
+              1.490.000 VNĐ
             </h2>
             <hr className='text-gray-400' />
             <div className='p-4 text-lg'>
@@ -69,7 +69,8 @@ const ChargeCard = () => {
           <div className='w-full h-full shadow-[0_0_20px_rgba(0,200,255,1)] rounded-2xl py-3'>
             <h2 className='text-2xl md:text-3xl text-center py-2 text-[rgb(0,120,200)]'>
               Gói nâng cao
-              <br />0 VNĐ
+              <br />
+              3.790.000 VNĐ
             </h2>
             <hr className='text-[rgb(0,120,200)]' />
             <div className='p-4 text-lg'>
@@ -120,7 +121,8 @@ const ChargeCard = () => {
 '
             >
               Gói toàn diện
-              <br />0 VNĐ
+              <br />
+              4.890.000 VNĐ
             </h2>
             <hr className='text-[rgb(200,100,0)]' />
             <div className='p-4 text-lg'>
