@@ -115,7 +115,7 @@ const ChargeCard = () => {
                   <span className=' mr-2'>
                     <CheckCircleIcon fontSize='small' sx={{ color: '#00b300', marginBottom: '3px' }} />
                   </span>
-                  <span>Chữ ký số 1 năm</span>
+                  <span>Chữ ký số 3 năm</span>
                 </li>
                 <li>
                   <span className=' mr-2'>
