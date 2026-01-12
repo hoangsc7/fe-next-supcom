@@ -3,11 +3,12 @@ import ChargeCard from '~/components/Thanhlapcongty/ChargeCard'
 import StepTLCT from '~/components/Thanhlapcongty/SectionStepTLCT'
 import SectionServiceCard from '~/components/Thanhlapcongty/SectionServiceCard'
 // import FormNews from '~/components/News/FormNews'
-import { NewsData } from '~/components/News/NewsData'
-import { New } from '~/types/new'
+// import { NewsData } from '~/components/News/NewsData'
+// import { New } from '~/types/new'
 import SectionPrepare from '~/components/Thanhlapcongty/SectionPrepare'
 import SectionSauTL from '~/components/Thanhlapcongty/SectionSauTL'
 import { Metadata } from 'next'
+import PopupTldn from '~/components/Form/PopupTldn'
 
 // type Props = {
 //   params: Promise<{ locale: string; category: string; newSlug: string }>
@@ -67,10 +68,11 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const PageNew = async () => {
-  const data: New[] = NewsData.slice(0, 4)
+  // const data: New[] = NewsData.slice(0, 4)
 
   return (
     <div className='w-full bg-white'>
+      <PopupTldn />
       <BannerTLDN />
       <main className='md:mx-22.5'>
         {/* chi phi */}

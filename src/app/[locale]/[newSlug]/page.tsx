@@ -3,17 +3,17 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import ChargeCard from '~/components/Thanhlapcongty/ChargeCard'
 import Banner from '~/components/Home/Banner'
-import { New } from '~/types/new'
+// import { New } from '~/types/new'
 
 type Props = {
   params: Promise<{ locale: string; newSlug: string }>
 }
-type Page = {
-  currentPage: number
-  data: New[]
-  total: number
-  totalPages: number
-}
+// type Page = {
+//   currentPage: number
+//   data: New[]
+//   total: number
+//   totalPages: number
+// }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, newSlug } = await params
@@ -60,7 +60,7 @@ const PageNew = async () => {
   return (
     <div className='w-full bg-white'>
       <Banner />
-      <main className='md:mx-[90px]'>
+      <main className='md:mx-22.5'>
         {/*  */}
         <div>
           <h1 className='text-xl md:text-3xl text-center font-semibold uppercase mt-10'>
@@ -77,7 +77,7 @@ const PageNew = async () => {
           </h1>
           <Grid container sx={{ marginTop: '10px' }}>
             <Grid size={{ xs: 6, md: 3 }} sx={{ display: 'flex', justifyContent: 'center' }}>
-              <div className='my-3 max-w-[220px]'>
+              <div className='my-3 max-w-55'>
                 <div className='flex justify-center'>
                   <Image src='/icon/professionalism.png' alt='professional' width={100} height={100} />
                 </div>
@@ -86,7 +86,7 @@ const PageNew = async () => {
               </div>
             </Grid>
             <Grid size={{ xs: 6, md: 3 }} sx={{ display: 'flex', justifyContent: 'center' }}>
-              <div className='my-3 max-w-[220px]'>
+              <div className='my-3 max-w-55'>
                 <div className='flex justify-center'>
                   <Image src='/icon/transparency.png' alt='professional' width={100} height={100} />
                 </div>
@@ -96,7 +96,7 @@ const PageNew = async () => {
             </Grid>
 
             <Grid size={{ xs: 6, md: 3 }} sx={{ display: 'flex', justifyContent: 'center' }}>
-              <div className='my-3 max-w-[220px]'>
+              <div className='my-3 max-w-55'>
                 <div className='flex justify-center'>
                   <Image src='/icon/cyber-security.png' alt='professional' width={100} height={100} />
                 </div>
@@ -105,7 +105,7 @@ const PageNew = async () => {
               </div>
             </Grid>
             <Grid size={{ xs: 6, md: 3 }} sx={{ display: 'flex', justifyContent: 'center' }}>
-              <div className='my-3 max-w-[220px]'>
+              <div className='my-3 max-w-55'>
                 <div className='flex justify-center'>
                   <Image src='/icon/personal-trainer.png' alt='professional' width={100} height={100} />
                 </div>
@@ -130,7 +130,7 @@ const PageNew = async () => {
                 <div className='line-fill'></div>
               </div> */}
 
-              <div className='-translate-y-[15px]'>
+              <div className='-translate-y-3.75'>
                 {' '}
                 <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }} spacing={1}>
                   <Grid size={{ xs: 12, md: 2.4 }}>

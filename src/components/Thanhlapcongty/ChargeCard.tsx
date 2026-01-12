@@ -75,7 +75,42 @@ const ChargeCard = () => {
             <hr className='text-[rgb(0,120,200)]' />
             <div className='p-4 text-lg'>
               <ul className=''>
-                <div className='text-center mb-2 text-[rgb(0,120,200)]'>Bao gồm gói cơ bản</div>
+                <li>
+                  <span className='mr-2'>
+                    <CheckCircleIcon fontSize='small' sx={{ color: '#00b300', marginBottom: '3px' }} />
+                  </span>
+                  <span className=''>Giấy phép đăng ký kinh doanh</span>
+                </li>
+                <li>
+                  <span className=' mr-2'>
+                    <CheckCircleIcon fontSize='small' sx={{ color: '#00b300', marginBottom: '3px' }} />
+                  </span>
+                  <span className=''>Dấu tròn công ty</span>
+                </li>
+                <li>
+                  <span className=' mr-2'>
+                    <CheckCircleIcon fontSize='small' sx={{ color: '#00b300', marginBottom: '3px' }} />
+                  </span>
+                  <span className=''>Công bố mẫu dấu</span>
+                </li>
+                <li>
+                  <span className=' mr-2'>
+                    <CheckCircleIcon fontSize='small' sx={{ color: '#00b300', marginBottom: '3px' }} />
+                  </span>
+                  <span className=''>Bố cáo thành lập doanh nghiệp</span>
+                </li>
+                <li>
+                  <span className=' mr-2'>
+                    <CheckCircleIcon fontSize='small' sx={{ color: '#00b300', marginBottom: '3px' }} />
+                  </span>
+                  <span className=''>Điều lệ công ty</span>
+                </li>
+                <li>
+                  <span className=' mr-2'>
+                    <CheckCircleIcon fontSize='small' sx={{ color: '#00b300', marginBottom: '3px' }} />
+                  </span>
+                  <span className=''>Tài khoản ngân hàng số đẹp tự chọn</span>
+                </li>{' '}
                 <li>
                   <span className=' mr-2'>
                     <CheckCircleIcon fontSize='small' sx={{ color: '#00b300', marginBottom: '3px' }} />

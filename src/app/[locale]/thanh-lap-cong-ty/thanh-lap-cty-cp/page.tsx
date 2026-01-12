@@ -8,7 +8,7 @@ const CP = () => {
   return (
     <div className='w-full bg-white'>
       <BannerCP />
-      <main className='md:mx-[90px]'>
+      <main className='md:mx-22.5'>
         {/* chi phi */}
         <section>
           <h1 className='text-2xl md:text-3xl text-center font-semibold uppercase mt-10'>

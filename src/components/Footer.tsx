@@ -21,7 +21,7 @@ const Footer = () => {
           <div>
             <div className='flex justify-center'>
               <Image
-                className='max-w-[400px] max-h-[200px] pt-2'
+                className='max-w-100 max-h-50 pt-2'
                 src='/logo-dark.png'
                 priority
                 alt='Logo'
@@ -31,7 +31,7 @@ const Footer = () => {
                 style={{ width: '100%', height: '100%', objectFit: 'cover', border: '1px ', borderRadius: '10px' }}
               />
             </div>
-            <h1 className='w-full text-xl text-white font-bold uppercase text-center'>
+            <h1 className='w-full text-2xl text-white font-bold uppercase text-center'>
               CÔNG TY TNHH XÚC TIẾN ĐẦU TƯ THƯƠNG MẠI SUPCOM VIỆT NAM
             </h1>
           </div>
@@ -93,11 +93,11 @@ const Footer = () => {
               </ul>
             </Grid>
             <Grid size={{ xs: 12, lg: 6 }}>
-              <h3 className='my-5 flex justify-center text-2xl font-bold mb-2'>Theo dõi chúng tôi</h3>
+              <h3 className='my-5 flex justify-center text-xl font-bold mb-2'>Theo dõi chúng tôi</h3>
               <div className='flex justify-center space-x-4  '>
                 <Link href='https://www.facebook.com/tuvandoanhnghiepsupcom'>
                   <Image
-                    className='max-w-[60px] max-h-[60px]'
+                    className='max-w-15 max-h-15'
                     src='/icon/face-logo1.png'
                     alt='Fanpage Facebook Supcom'
                     width={0}
@@ -108,7 +108,7 @@ const Footer = () => {
                 </Link>
                 <Link href='#contact'>
                   <Image
-                    className='max-w-[60px] max-h-[60px]'
+                    className='max-w-15 max-h-15'
                     src='/icon/youtube-logo.png'
                     alt='Youtube Supcom'
                     width={0}

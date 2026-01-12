@@ -36,9 +36,9 @@ const Software = () => {
   return (
     <div className='overflow-hidden'>
       {/* ================= HERO ================= */}
-      <section className='py-20 bg-gradient-to-b from-blue-100 via-white to-cyan-50'>
+      <section className='py-20 bg-linear-to-b from-blue-100 via-white to-cyan-50'>
         <div className='max-w-7xl mx-auto px-4 md:px-10 text-center'>
-          <h1 className='text-2xl md:text-4xl font-bold uppercase bg-gradient-to-r from-blue-700 to-cyan-500 bg-clip-text text-transparent'>
+          <h1 className='text-2xl md:text-4xl font-bold uppercase bg-linear-to-r from-blue-700 to-cyan-500 bg-clip-text text-transparent'>
             Phần mềm hỗ trợ doanh nghiệp
           </h1>
 
@@ -51,7 +51,7 @@ const Software = () => {
             <Button
               onClick={() => setOpen(true)}
               size='large'
-              className='!bg-blue-500 !text-white hover:!bg-blue-700 px-10 py-3 !rounded-3xl'
+              className='bg-blue-500! text-white! hover:bg-blue-700! px-10 py-3 rounded-3xl!'
             >
               Liên hệ chúng tôi
             </Button>
@@ -89,7 +89,7 @@ const Software = () => {
         </div>
       </section>*/}
 
-      <section className='pb-16 bg-gradient-to-r from-[#fdf6e3] via-[#fffaf0] to-[#fdf6e3]'>
+      <section className='pb-16 bg-linear-to-r from-[#fdf6e3] via-[#fffaf0] to-[#fdf6e3]'>
         <div className='max-w-7xl mx-auto px-4 md:px-10'>
           <div className='flex justify-center py-10'>
             <Image src='/logo-fastca.png' alt='' width={200} height={10} quality={100} />
@@ -179,7 +179,7 @@ const Software = () => {
         </div>
       </section>*/}
 
-      <section className='pb-16 bg-gradient-to-br from-[#ff1a1a] to-[#ff6666] text-white'>
+      <section className='pb-16 bg-linear-to-br from-[#ff1a1a] to-[#ff6666] text-white'>
         <div className='max-w-7xl mx-auto px-4 md:px-10'>
           <div className='flex justify-center py-10'>
             <Image src='/xCyber-bill.png' alt='' width={200} height={100} quality={100} />
@@ -222,7 +222,7 @@ const Software = () => {
       </section>
 
       {/* ================= EFY ================= */}
-      <section className='pb-16 bg-gradient-to-r from-blue-400 to-cyan-500 text-white'>
+      <section className='pb-16 bg-linear-to-r from-blue-400 to-cyan-500 text-white'>
         <div className='max-w-7xl mx-auto px-4 md:px-10'>
           <div className='flex justify-center py-10'>
             <Image src='/logo-ebhxh.png' alt='' width={100} height={50} quality={100} />
@@ -271,7 +271,7 @@ const Software = () => {
                 key={i}
                 className='fade fade-left-to-right flex items-start gap-4 bg-gray-50 p-6 rounded-xl hover:shadow-md transition'
               >
-                <span className='flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold'>
+                <span className='flex h-9 w-9 items-center justify-center rounded-full bg-linear-to-r from-blue-600 to-cyan-500 text-white font-bold'>
                   ✓
                 </span>
                 <span className='text-gray-700'>{text}</span>

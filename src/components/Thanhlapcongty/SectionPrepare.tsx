@@ -11,7 +11,7 @@ const SectionPrepare = () => {
       <PopupSearchName open={open} onClose={() => setOpen(false)} />
       <div className='max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 px-4'>
         <div className='relative bg-white p-5 rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden'>
-          <div className='shape-wrap w-12 h-[100px] mr-1'>
+          <div className='shape-wrap w-12 h-25 mr-1'>
             <div
               className='absolute text-[100px] text-blue-500 font-extrabold leading-none select-none'
               style={{ textShadow: '2px 2px 0px #1e3a8a' }}
@@ -40,7 +40,7 @@ const SectionPrepare = () => {
           </div>
         </div>
         <div className='relative bg-white p-5 rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden'>
-          <div className='shape-wrap w-16 h-[100px] mr-1'>
+          <div className='shape-wrap w-16 h-25 mr-1'>
             <div
               className='absolute text-[100px] text-blue-500 font-extrabold leading-none select-none'
               style={{ textShadow: '2px 2px 0px #1e3a8a' }}
@@ -56,7 +56,7 @@ const SectionPrepare = () => {
           </p>
         </div>
         <div className='relative bg-white p-5 rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden'>
-          <div className='shape-wrap w-16 h-[100px] mr-1'>
+          <div className='shape-wrap w-16 h-25 mr-1'>
             <div
               className='absolute text-[100px] text-blue-500 font-extrabold leading-none select-none'
               style={{ textShadow: '2px 2px 0px #1e3a8a' }}
@@ -75,7 +75,7 @@ const SectionPrepare = () => {
           </p>
         </div>
         <div className='relative bg-white p-5 rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden'>
-          <div className='shape-wrap w-16 h-[100px] mr-1'>
+          <div className='shape-wrap w-16 h-25 mr-1'>
             <div
               className='absolute text-[100px] text-blue-500 font-extrabold leading-none select-none'
               style={{ textShadow: '2px 2px 0px #1e3a8a' }}
@@ -93,7 +93,7 @@ const SectionPrepare = () => {
           </p>
         </div>
         <div className='relative bg-white p-5 rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden'>
-          <div className='shape-wrap w-16 h-[100px] mr-1'>
+          <div className='shape-wrap w-16 h-25 mr-1'>
             <div
               className='absolute text-[100px] text-blue-500 font-extrabold leading-none select-none'
               style={{ textShadow: '2px 2px 0px #1e3a8a' }}

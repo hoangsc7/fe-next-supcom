@@ -8,7 +8,7 @@ const Banner = () => {
   const href = '/thanh-lap-cong-ty'
   return (
     <div>
-      <div className='relative w-full flex flex-col justify-center overflow-hidden min-h-[650px]'>
+      <div className='relative w-full flex flex-col justify-center overflow-hidden min-h-162.5'>
         <Image src='/banner/banner3.png' fill priority alt='Banner Supcom' className='object-cover' />
 
         <div className='absolute inset-0 bg-linear-to-r from-[#000c2e] to-[#0053a5] mix-blend-plus-lighter'></div>

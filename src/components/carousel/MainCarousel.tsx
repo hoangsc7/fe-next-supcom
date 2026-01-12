@@ -20,7 +20,7 @@ export function EmblaCarousel() {
         {mainCarouselData.map((item) => (
           <div className='embla__slide px-2' key={item?.id}>
             <Link href={item?.path}>
-              <div className='relative h-auto min-h-[500px] object-cover rounded-lg'>
+              <div className='relative h-auto min-h-125 object-cover rounded-lg'>
                 <Image
                   src={item?.image}
                   fill
