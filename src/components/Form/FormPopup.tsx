@@ -1,5 +1,5 @@
 'use client'
-import React, { ChangeEvent, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Grid, MenuItem, Select, TextField } from '@mui/material'
 import Image from 'next/image'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
@@ -57,7 +57,7 @@ const FormPopup = () => {
       )
 
       alert('Đăng ký thành công!')
-      setFormData({ name: '', phone: '', service: 'Thành lập công ty', note: '', date: '' })
+      setFormData({ name: '', phone: '', service: 'Thành lập công ty TNHH 1 thành viên', note: '', date: '' })
       // handleClose()
     } catch (error) {
       console.error('Error submitting form:', error)
@@ -68,39 +68,13 @@ const FormPopup = () => {
     initFadeIn()
   }, [])
   return (
-    <div className='bg-contact max-w-[795px] rounded-[20px]'>
+    <div className='bg-contact max-w-198.75 rounded-[20px]'>
       <div className='flex justify-center pt-2'>
         <Image src='/logo-dark.png' alt='logoSupcom' width={200} height={160} />
       </div>
       <h1 className='text-white text-center text-2xl p-2 uppercase'>Đăng ký nhận tư vấn</h1>
-      {/*<div className='flex justify-center items-center pt-6'>
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.6,
-            ease: 'easeOut'
-          }}
-        >
-          <Image
-            src='/img/thusc.png'
-            width={360}
-            height={360}
-            quality={100}
-            alt='Banner Supcom'
-            className='
-        object-contain drop-shadow-[0_20px_35px_rgba(255,255,255,0.45)]
-        w-[250px] h-[250px]
-        md:w-[260px] md:h-[260px]
-        lg:w-[360px] lg:h-[360px]
-      '
-          />
-        </motion.div>
-      </div>*/}
       <div className='fade fade-down-to-up'>
         <div className='drop-shadow-[0_0_28px_rgba(255,255,255,0.5)]       md:drop-shadow-[0_0_45px_rgba(255,255,255,0.5)]'>
-          {/* layer cho shadow */}
-
           <div className='flex justify-between mx-5 '>
             <div className='flex flex-col justify-center gap-2 text-[8px] md:text-[13px] font-bold'>
               <div className='flex items-center gap-1 md:gap-2 px-2 py-2 rounded-full bg-white/10 text-white border border-white/20'>
@@ -108,10 +82,8 @@ const FormPopup = () => {
                   sx={{ color: '#00b300', background: 'white', borderRadius: '100%' }}
                   className='mr-2 inline'
                 />
-
                 <span>Thành lập doanh nghiệp trọn gói, không phát sinh chi phí</span>
               </div>
-
               <div className='flex items-center gap-1 md:gap-2 px-2 py-2 rounded-full bg-white/10 text-white border border-white/20'>
                 <CheckCircleIcon
                   sx={{ color: '#00b300', background: 'white', borderRadius: '100%' }}
@@ -133,12 +105,7 @@ const FormPopup = () => {
               height={1000}
               src='/img/thusc.png'
               alt='Banner Supcom'
-              className='
-          object-contain 
-          w-[150px] h-[150px]
-          md:w-[200px] md:h-[200px]
-          lg:w-[230px] lg:h-[230px]
-        '
+              className='object-contain w-37.5 h-37.5 md:w-50 md:h-50 lg:w-57.5 lg:h-57.5'
             />
           </div>
         </div>

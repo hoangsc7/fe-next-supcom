@@ -124,7 +124,7 @@ const StepTLCT = () => {
                         <div className='font-bold text-base mb-2' style={{ color: step.bgColor }}>
                           Bước {step.number}
                         </div>
-                        <h3 className='text-lg font-bold text-gray-900 h-[45px] leading-tight px-2'>{step.title}</h3>
+                        <h3 className='text-lg font-bold text-gray-900 h-11.25 leading-tight px-2'>{step.title}</h3>
                       </div>
                       {/* Dashed line going down */}
                       <div

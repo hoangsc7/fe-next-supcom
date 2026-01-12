@@ -49,7 +49,7 @@ export default function ChangeLicenseSection() {
     initFadeIn()
   }, [])
   return (
-    <section className='pb-12 bg-gradient-to-b from-blue-50 to-white'>
+    <section className='pb-12 bg-linear-to-b from-blue-50 to-white'>
       <PopupContact open={open} onClose={() => setOpen(false)} />
 
       <div className='max-w-7xl mx-auto  md:px-10'>
@@ -65,7 +65,7 @@ export default function ChangeLicenseSection() {
             <Button
               onClick={() => setOpen(true)}
               size='large'
-              className='!bg-blue-600 !text-white hover:!bg-blue-700 px-10 py-3 rounded-full'
+              className='bg-blue-600! text-white! hover:bg-blue-700! px-10 py-3 rounded-full'
             >
               Liên hệ chúng tôi
             </Button>
@@ -99,7 +99,7 @@ export default function ChangeLicenseSection() {
                 className='
                   mt-auto
                   self-start
-                  !text-blue-600
+                  text-blue-600!
                   font-medium
                   hover:underline
                 '

@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { NewsData } from '~/components/News/NewsData'
 import FormNews from '~/components/News/FormNews'
 // import { Category } from '~/types/new'
-import { notFound } from 'next/navigation'
+// import { notFound } from 'next/navigation'
 // import OutStandNews from '~/app/components/News/OutStandNews'
 
 const PageCategory = async ({
@@ -23,7 +23,7 @@ const PageCategory = async ({
   // }
   return (
     <div className='flex justify-center'>
-      <div className='w-full max-w-[1170px] bg-white p-1 md:p-4'>
+      <div className='w-full max-w-292.5 bg-white p-1 md:p-4'>
         <hr />
         <div className='flex justify-center pt-2 pb-2 h-auto '>
           <Breadcrumbs sx={{ width: '100%' }} aria-label='breadcrumb' separator={<NavigateNextIcon fontSize='small' />}>

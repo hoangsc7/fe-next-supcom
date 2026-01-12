@@ -8,7 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/admin', '/api']
     },
-    sitemap: 'http://localhost:3000/sitemap.xml',
-    host: 'http://localhost:3000'
+    sitemap: '/sitemap.xml',
   }
 }

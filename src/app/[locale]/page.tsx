@@ -1,8 +1,8 @@
 import { Grid } from '@mui/material'
 // import { getTranslations } from 'next-intl/server'
-import { New } from '~/types/new'
+// import { New } from '~/types/new'
 // import FormNews from '../../components/News/FormNews'
-import { NewsData } from '../../components/News/NewsData'
+// import { NewsData } from '../../components/News/NewsData'
 import { Metadata } from 'next'
 import Banner from '../../components/Home/Banner'
 import Image from 'next/image'
@@ -43,7 +43,7 @@ export default async function Home() {
         <Banner />
         <div className=' w-full bg-white flex justify-center '>
           {/* Body */}
-          <div className='max-w-[1170px]'>
+          <div className='max-w-292.5'>
             {/* gioi thieu */}
             <div className='p-3 md:p-6 text-center'>
               <div className='font-bold text-3xl uppercase text-shadow text-purple-900 '>
@@ -66,7 +66,7 @@ export default async function Home() {
               </h1>
               <Grid container sx={{ marginTop: '10px' }}>
                 <Grid size={{ xs: 6, md: 3 }} sx={{ display: 'flex', justifyContent: 'center' }}>
-                  <div className='my-3 max-w-[220px]'>
+                  <div className='my-3 max-w-55'>
                     <div className='flex justify-center'>
                       <Image src='/icon/professionalism.png' alt='professional' width={100} height={100} />
                     </div>
@@ -75,7 +75,7 @@ export default async function Home() {
                   </div>
                 </Grid>
                 <Grid size={{ xs: 6, md: 3 }} sx={{ display: 'flex', justifyContent: 'center' }}>
-                  <div className='my-3 max-w-[220px]'>
+                  <div className='my-3 max-w-55'>
                     <div className='flex justify-center'>
                       <Image src='/icon/transparency.png' alt='professional' width={100} height={100} />
                     </div>
@@ -85,7 +85,7 @@ export default async function Home() {
                 </Grid>
 
                 <Grid size={{ xs: 6, md: 3 }} sx={{ display: 'flex', justifyContent: 'center' }}>
-                  <div className='my-3 max-w-[220px]'>
+                  <div className='my-3 max-w-55'>
                     <div className='flex justify-center'>
                       <Image src='/icon/cyber-security.png' alt='professional' width={100} height={100} />
                     </div>
@@ -94,7 +94,7 @@ export default async function Home() {
                   </div>
                 </Grid>
                 <Grid size={{ xs: 6, md: 3 }} sx={{ display: 'flex', justifyContent: 'center' }}>
-                  <div className='my-3 max-w-[220px]'>
+                  <div className='my-3 max-w-55'>
                     <div className='flex justify-center'>
                       <Image src='/icon/personal-trainer.png' alt='professional' width={100} height={100} />
                     </div>

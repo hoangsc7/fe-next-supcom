@@ -244,8 +244,6 @@ import {
   IconButton,
   Drawer,
   ListItemButton,
-  Select,
-  MenuItem,
   ListItemText
 } from '@mui/material'
 import Image from 'next/image'
@@ -253,8 +251,8 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu'
 import CloseIcon from '@mui/icons-material/Close'
-import { useLocale, useTranslations } from 'next-intl'
-import { usePathname, useRouter } from 'next/navigation'
+import { useLocale } from 'next-intl'
+import { usePathname } from 'next/navigation'
 import ButtonContact from './Button/ButtonContact'
 
 export default function Header() {
@@ -264,19 +262,19 @@ export default function Header() {
   const toggleDrawer = (value: boolean) => () => setOpen(value)
 
   const locale = useLocale()
-  const t = useTranslations('navbar')
-  const router = useRouter()
+  // const t = useTranslations('navbar')
+  // const router = useRouter()
   const pathname = usePathname() || '/'
 
-  const changeLanguage = (newLocale: string) => {
-    const segments = pathname.split('/')
-    // segments[0] = '' (because pathname starts with '/')
-    // segments[1] is current locale (if present)
-    if (segments.length > 1) segments[1] = newLocale
-    else segments[1] = newLocale
-    const newPath = segments.join('/')
-    router.push(newPath)
-  }
+  // const changeLanguage = (newLocale: string) => {
+  //   const segments = pathname.split('/')
+  //   // segments[0] = '' (because pathname starts with '/')
+  //   // segments[1] is current locale (if present)
+  //   if (segments.length > 1) segments[1] = newLocale
+  //   else segments[1] = newLocale
+  //   const newPath = segments.join('/')
+  //   router.push(newPath)
+  // }
 
   const isActive = (itemPath: string) => {
     // itemPath expected like `/vi/ke-toan-thue` or `/vi` (home)

@@ -1,5 +1,5 @@
 'use client'
-import React, { ChangeEvent, useState } from 'react'
+import React, { useState } from 'react'
 import { Button, Grid, Input, MenuItem, Select } from '@mui/material'
 // import { EmblaCarousel } from '~/components/carousel/MainCarousel'
 // import { FeedbackCarousel } from '../carousel/FeedbackCarousel'
@@ -64,7 +64,7 @@ const FormContact = () => {
     }
   }
   return (
-    <div className='w-[1200px] m-3 md:m-5 bg-gray-50 rounded-[20px] '>
+    <div className=' m-3 md:m-5 bg-gray-50 rounded-[20px] '>
       <Grid container spacing={2}>
         <Grid size={{ xs: 12, md: 7 }}>
           <div className=''></div>
@@ -72,7 +72,7 @@ const FormContact = () => {
         <Grid size={{ xs: 12, md: 5 }}>
           <form
             id='contact'
-            className='bg-contact p-10  min-h-[400px] md:min-h-[500px] rounded-[20px] flex flex-col gap-5'
+            className='bg-contact p-10  min-h-100 md:min-h-125 rounded-[20px] flex flex-col gap-5'
             onSubmit={handleSubmit}
           >
             <div className='text-white text-xl text-center mb-4 uppercase font-bold'>

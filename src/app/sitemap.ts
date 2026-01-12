@@ -8,7 +8,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       locale: 'vi',
       category: 'thanh lap cong ty, doanh nghiep',
       slug: 'thanh-lap-doanh-nghiep',
-      updatedAt: '19/11/2025'
+      updatedAt: '2025-11-19'
     }
   ]
 

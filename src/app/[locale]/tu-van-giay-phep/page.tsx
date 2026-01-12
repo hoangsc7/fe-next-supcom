@@ -42,7 +42,7 @@ const LicenseConsulting = () => {
   return (
     <div>
       {/* HERO */}
-      <section className='py-16 bg-gradient-to-br from-blue-50 to-cyan-50'>
+      <section className='py-16 bg-linear-to-br from-blue-50 to-cyan-50'>
         <div className='max-w-7xl mx-auto px-4 md:px-10 text-center'>
           <h1 className='text-2xl md:text-3xl font-bold uppercase text-blue-900'>Tư vấn & xin giấy phép kinh doanh</h1>
           <p className='mt-4 text-gray-600 max-w-3xl mx-auto'>
@@ -85,7 +85,7 @@ const LicenseConsulting = () => {
                 </div>
 
                 <div className='mt-6'>
-                  <Button className='!text-blue-600 hover:underline'>Tìm hiểu chi tiết →</Button>
+                  <Button className='text-blue-600! hover:underline'>Tìm hiểu chi tiết →</Button>
                 </div>
               </article>
             ))}
@@ -102,7 +102,7 @@ const LicenseConsulting = () => {
           </p>
 
           <div className='mt-6'>
-            <Button variant='contained' className='!bg-white !text-blue-900 hover:!bg-blue-50' href='#contact'>
+            <Button variant='contained' className='bg-white! text-blue-900! hover:bg-blue-50!' href='#contact'>
               Nhận tư vấn miễn phí
             </Button>
           </div>

@@ -1,6 +1,6 @@
 'use client'
 
-import { Button, Grid } from '@mui/material'
+import { Grid } from '@mui/material'
 import Link from 'next/link'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import { useEffect } from 'react'
