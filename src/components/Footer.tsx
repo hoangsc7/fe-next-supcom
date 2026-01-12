@@ -17,6 +17,11 @@ const Footer = () => {
   return (
     <div className='bg-footer h-auto w-full'>
       <Grid container sx={{ width: '100%', padding: '2rem' }} spacing={2}>
+        <Grid size={{ xs: 12, lg: 4 }} className='flex flex-col justify-center'>
+          <div className=''>
+            <FormContact1 />
+          </div>
+        </Grid>
         <Grid size={{ xs: 12, lg: 8 }} className='text-white '>
           <div>
             <div className='flex justify-center'>
@@ -123,12 +128,6 @@ const Footer = () => {
               </div>
             </Grid>
           </Grid>
-        </Grid>
-
-        <Grid size={{ xs: 12, lg: 4 }} className='flex flex-col justify-center'>
-          <div className=''>
-            <FormContact1 />
-          </div>
         </Grid>
       </Grid>
       <div className='text-white text-center italic'>
