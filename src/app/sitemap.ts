@@ -3,10 +3,12 @@ import { MetadataRoute } from 'next'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // const posts = await getAllNews()
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL!
+
   const posts = [
     {
       locale: 'vi',
-      category: 'thanh lap cong ty, doanh nghiep',
+      category: 'thanh-lap-cong-ty',
       slug: 'thanh-lap-doanh-nghiep',
       updatedAt: '2025-11-19'
     }
@@ -14,11 +16,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     {
-      url: 'https://supcom.vn',
+      url: siteUrl,
       lastModified: new Date()
     },
     ...posts.map((post) => ({
-      url: `https://supcom.vn/${post.locale}/${post.category}/${post.slug}`,
+      url: `${siteUrl}/${post.locale}/${post.category}/${post.slug}`,
       lastModified: post.updatedAt || new Date()
     }))
   ]

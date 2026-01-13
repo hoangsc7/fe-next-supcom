@@ -25,8 +25,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
   return {
     description: 'Dịch vụ thành lập công ty, chữ ký số, bảo hiểm xã hội,...',
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL!),
     alternates: {
-      canonical: `https://supcom.vn/${locale}`,
+      canonical: `/${locale}`,
       languages: {
         vi: '/vi',
         en: '/en'
